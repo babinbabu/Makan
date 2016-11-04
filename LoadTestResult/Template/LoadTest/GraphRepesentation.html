@@ -1,0 +1,140 @@
+﻿<style>
+    .canvasjs-chart-credit {
+        display:none;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Load Test Summary </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <!--<div class="x_title">
+                        <h2>Test Run Information</h2>
+
+                        <div class="clearfix"></div>
+                    </div>-->
+                    <div class="x_content">
+                        <div id="chartContainer" style="height: 300px; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="display: none">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Test Run Information</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div id="Div1" style="height: 300px; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="display: none">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Test Run Information</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div id="Div2" style="height: 300px; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="display: none">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Test Run Information</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div id="Div3" style="height: 300px; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Counter Details</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">Counter </th>
+                                        <th class="column-title">Instance </th>
+                                        <th class="column-title">Category </th>
+                                        <th class="column-title">Computer</th>
+                                        <th class="column-title">Range</th>
+                                        <th class="column-title">Min</th>
+                                        <th class="column-title">Max</th>
+                                        <th class="column-title">Avg</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr class="even pointer">
+                                        <td class="" colspan="8"><b>Key Indicators</b></td>
+                                    </tr>
+                                     <tr class="even pointer" ng-repeat="KeyIndicator in KeyIndicators">
+                                        <td class=" ">{{KeyIndicator.Counter}}</td>
+                                        <td class=" ">{{KeyIndicator.Instance}}</td>
+                                        <td class=" ">{{KeyIndicator.Category}}</td>
+                                        <td class=" ">{{KeyIndicator.Computer}}</td>
+                                        <td class=" ">{{KeyIndicator.Range}}</td>
+                                        <td class=" ">{{KeyIndicator.Minimum | setDecimal:2}}</td>
+                                        <td class=" ">{{KeyIndicator.Maximum | setDecimal:2}}</td>
+                                        <td class=" ">{{KeyIndicator.Average | setDecimal:2}}</td>
+                                    </tr>
+                                    <tr class="even pointer">
+                                        <td class="" colspan="8"><b>Page Response Time</b></td>
+                                    </tr>
+                                    <tr class="even pointer" ng-repeat="PageResponseTime in PageResponseTimes">
+                                        <td class=" ">{{PageResponseTime.Counter}}</td>
+                                        <td class=" ">{{PageResponseTime.Instance}}</td>
+                                        <td class=" ">{{PageResponseTime.Category}}</td>
+                                        <td class=" ">{{PageResponseTime.Computer}}</td>
+                                        <td class=" ">{{PageResponseTime.Range}}</td>
+                                        <td class=" ">{{PageResponseTime.Minimum | setDecimal:2}}</td>
+                                        <td class=" ">{{PageResponseTime.Maximum | setDecimal:2}}</td>
+                                        <td class=" ">{{PageResponseTime.Average | setDecimal:2}}</td>
+                                    </tr>
+                                    <tr class="even pointer">
+
+                                        <td class="" colspan="8"><b>Controller and Agents</b></td>
+                                    </tr>
+                                    <tr class="even pointer" ng-repeat="ControllerandAgent in ControllerandAgents">
+                                        <td class=" ">{{ControllerandAgent.Counter}}</td>
+                                        <td class=" ">{{ControllerandAgent.Instance}}</td>
+                                        <td class=" ">{{ControllerandAgent.Category}}</td>
+                                        <td class=" ">{{ControllerandAgent.Computer}}</td>
+                                        <td class=" ">{{ControllerandAgent.Range}}</td>
+                                        <td class=" ">{{ControllerandAgent.Minimum | setDecimal:2}}</td>
+                                        <td class=" ">{{ControllerandAgent.Maximum | setDecimal:2}}</td>
+                                        <td class=" ">{{ControllerandAgent.Average | setDecimal:2}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

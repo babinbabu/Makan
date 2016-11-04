@@ -1,0 +1,30 @@
+﻿<div class="x_content">
+    <div class="table-responsive">
+        <table class="table table-striped jambo_table bulk_action">
+            <thead>
+                <tr class="headings">
+                    <th class="column-title">Agent</th>
+                    <th class="column-title">Test </th>
+                    <th class="column-title">Scenario </th>
+                    <th class="column-title">Request </th>
+                    <th class="column-title">Type </th>
+                    <th class="column-title">Sub Type </th>
+                    <th class="column-title">Text </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="even pointer" ng-repeat="LoadTestDetailedError in LoadTestDetailedErrors">
+                    <td class=" ">{{LoadTestDetailedError.Agent}}</td>
+                    <td class=" ">{{LoadTestDetailedError.Test}} </td>
+                    <td class=" ">{{LoadTestDetailedError.Scenario}}</td>
+                    <td class=" ">{{LoadTestDetailedError.Request}}</td>
+                    <td class=" ">{{LoadTestDetailedError.Type | MessageTypeFilter}}</td>
+                    <td class=" ">{{LoadTestDetailedError.SubType}}</td>
+                    <td class=" ">{{LoadTestDetailedError.Text}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

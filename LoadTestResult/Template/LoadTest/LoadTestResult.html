@@ -1,0 +1,307 @@
+﻿<style>
+    .container-table {
+        display: table;
+    }
+
+    .vertical-center-row {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .styled-select.slate {
+        background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+        height: 34px;
+        width: 240px;
+    }
+
+        .styled-select.slate select {
+            border: 1px solid #ccc;
+            font-size: 16px;
+            height: 34px;
+            width: 268px;
+        }
+
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+    }
+    .pagination {
+        margin-left: 36%;
+    }
+</style>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="container container-table">
+        <div class="row vertical-center-row">
+            <div class="text-center col-md-4 col-md-offset-4">
+                <div class="styled-select slate">
+                    <select ng-change="change()" ng-model="CurrentLoadTestName">
+                        <option value="" selected disabled="disabled">Please select the Load Test</option>
+                        <option value="{{LoadTestName.LoadTestName}}" ng-repeat="(i,LoadTestName) in LoadTestNames">{{LoadTestName.LoadTestName}} </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    <div class="col-xs-5 col-md-7 col-lg-9 vcenter">
+        <select ng-change="change()" ng-model="CurrentLoadTestName">
+            <option value="" selected disabled="disabled">Please select the Load Test</option>
+            <option value="{{LoadTestName.LoadTestName}}" ng-repeat="(i,LoadTestName) in LoadTestNames">{{LoadTestName.LoadTestName}} </option>
+        </select>
+        <br />
+        <br />
+        <br />
+    </div>-->
+</div>
+<div class="clearfix"></div>
+<br />
+<br />
+<br />
+<div class="x_content test_result" style="display: none">
+    <form>
+        <div class="table-responsive">
+            <button type="button" ng-click="Compare()" class="btn btn-success" style="float: right;">Compare</button>
+            <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title"></th>
+                        <th class="column-title">LoadTest Name </th>
+                        <th class="column-title">Start Time </th>
+                        <th class="column-title">End Time </th>
+                        <th class="column-title">Run Duration (Sec) </th>
+                        <th class="column-title">Controller Name </th>
+                        <th class="column-title">Status </th>
+                        <th class="column-title no-link last" colspan="2" style="text-align: center"><span class="nobr">Action</span>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="even pointer" ng-repeat="LoadTest in LoadTestList.data">
+                        <td class=" ">
+                            <input type="checkbox" ng-model="LoadTest.Compare" value="{{LoadTest.LoadTestRunId}}" ng-if="LoadTest.Outcome == 'Completed'" class="flat" /></td>
+                        <td class=" ">{{LoadTest.LoadTestName}}</td>
+                        <td class=" ">{{LoadTest.StartTime | mydate | date: 'yyyy-MM-dd HH:mm'}} </td>
+                        <td class=" ">{{LoadTest.EndTime | mydate | date: 'yyyy-MM-dd HH:mm'}} </td>
+                        <td class=" ">{{LoadTest.RunDuration}}</td>
+                        <td class=" ">{{LoadTest.RunSettingUsed}}</td>
+                        <td class="a-right a-right ">{{LoadTest.Outcome}}</td>
+                        <td class=" last"><a href="#/LoadTest/DetailedResult/{{LoadTest.LoadTestRunId}}" ng-if="LoadTest.Outcome == 'Completed'">View</a>
+                        <td class=" last"><a href="#/LoadTest/GraphRepesentation/{{LoadTest.LoadTestRunId}}" ng-if="LoadTest.Outcome == 'Completed'">Graph</a>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <pagination total-items="pagingInfo.totalItems" ng-model="pagingInfo.page" max-size="maxSize" ng-click="selectPage(pagingInfo.page)" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" class="center" items-per-page="20"></pagination>
+        </div>
+    </form>
+</div>
+
+<div class="row compare_result" style="display: none">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="center">
+                <h2>Results Compare</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_title">
+                <h2>Test Run Information</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Load Test Name</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.LoadTestName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.Description}}</td>
+                        </tr>
+                        <tr>
+                            <td>Start Time</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.StartTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
+                        </tr>
+                        <tr>
+                            <td>End Time</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.EndTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Warm-up Duration</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.WarmupTime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.RunDuration}}</td>
+                        </tr>
+                        <tr>
+                            <td>Controller</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.IsLocalRun | ControllerFilter}}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Agents</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.NumberOfAgents}}</td>
+                        </tr>
+                        <tr>
+                            <td>Run Settings Used</td>
+                            <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.RunSettingUsed}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="x_title">
+                <h2>Overall Results</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Max User Load</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.MaxUserLoad}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tests/Sec</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.TestsPerSec | setDecimal:2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tests Failed</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.TestsFailed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Test Time (sec)</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.AvgTestTime | setDecimal:2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Transactions/Sec</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.TransactionsPerSec}}</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Transaction Time (sec)</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.AvgTransactionTime | setDecimal:2}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pages/Sec</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.PagesPerSec | setDecimal:2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Page Time (sec)</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.AvgPageTime | setDecimal:2}}</td>
+
+                    </tr>
+                    <tr>
+                        <td>Requests/Sec</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.PagesPerSec | setDecimal:2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Requests Failed</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.RequestsFailed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Response Time (sec)</td>
+                        <td ng-repeat="CompareLoadTestList in CompareLoadTestLists">{{CompareLoadTestList.AvgResponseTime| setDecimal:2}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Test Results</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" ng-repeat="CompareLoadTestList in CompareLoadTestLists">
+                        <table class="table table-striped jambo_table bulk_action">
+                            <thead>
+                                <tr class="headings">
+                                    <th class="column-title">Name </th>
+                                    <th class="column-title">Scenario </th>
+                                    <th class="column-title">Total Tests </th>
+                                    <th class="column-title">Failed Tests (% of total) </th>
+                                    <th class="column-title">Avg. Test Time (sec) </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="even pointer" ng-repeat="TestResult in CompareLoadTestList.TestResults">
+                                    <td class=" ">{{TestResult.Name}}</td>
+                                    <td class=" ">{{TestResult.Scenario}}</td>
+                                    <td class=" ">{{TestResult.TotalTests}}</td>
+                                    <td class=" ">{{TestResult.FailedTests}}</td>
+                                    <td class=" ">{{TestResult.AvgTestTime | setDecimal:2}}</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Page Results</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" ng-repeat="CompareLoadTestList in CompareLoadTestLists">
+                        <table class="table table-striped jambo_table bulk_action">
+                            <thead>
+                                <tr class="headings">
+                                    <th class="column-title">URL (Link to More Details) </th>
+                                    <th class="column-title">Scenario </th>
+                                    <th class="column-title">Test </th>
+                                    <th class="column-title">Avg. Page Time (sec) </th>
+                                    <th class="column-title">Count </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="even pointer" ng-repeat="PageResult in CompareLoadTestList.PageResults">
+                                    <td class=" ">{{PageResult.URL}}</td>
+                                    <td class=" ">{{PageResult.Scenario}}</td>
+                                    <td class=" ">{{PageResult.TestName}}</td>
+                                    <td class=" ">{{PageResult.AvgPageTime | setDecimal:2}}</td>
+                                    <td class=" ">{{PageResult.PageCount}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Errors</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" ng-repeat="CompareLoadTestList in CompareLoadTestLists">
+                        <table class="table table-striped jambo_table bulk_action">
+                            <thead>
+                                <tr class="headings">
+                                    <th class="column-title">Type </th>
+                                    <th class="column-title">Subtype </th>
+                                    <th class="column-title">Count </th>
+                                    <th class="column-title">Last Message</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="even pointer" ng-repeat="LoadTestError in CompareLoadTestList.LoadTestErrors">
+                                    <td class="">{{LoadTestError.ErrorType | MessageTypeFilter}}</td>
+                                    <td class="">{{LoadTestError.ErrorSubtype}}</td>
+                                    <td class=""><a ng-href="#/LoadTest/ErrorDetails/LoadTestRunId/{{LoadTestError.LoadTestRunId}}/SubType/{{LoadTestError.ErrorSubtype}}">{{LoadTestError.ErrorCount}}</a></td>
+                                    <td class="">{{LoadTestError.ErrorLastMessage}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

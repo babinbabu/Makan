@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoadTest2010Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LoadTest2010ModelStoreContainer">
+    <EntitySet Name="LoadTestBrowsers" EntityType="LoadTest2010Model.Store.LoadTestBrowsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestCase" EntityType="LoadTest2010Model.Store.LoadTestCase" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestDataCollectorLog" EntityType="LoadTest2010Model.Store.LoadTestDataCollectorLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestDetailMessage" EntityType="LoadTest2010Model.Store.LoadTestDetailMessage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestFileAttachment" EntityType="LoadTest2010Model.Store.LoadTestFileAttachment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestFileAttachmentChunk" EntityType="LoadTest2010Model.Store.LoadTestFileAttachmentChunk" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestMessage" EntityType="LoadTest2010Model.Store.LoadTestMessage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestMessageType" EntityType="LoadTest2010Model.Store.LoadTestMessageType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestNetworks" EntityType="LoadTest2010Model.Store.LoadTestNetworks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPageDetail" EntityType="LoadTest2010Model.Store.LoadTestPageDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPageSummaryByNetwork" EntityType="LoadTest2010Model.Store.LoadTestPageSummaryByNetwork" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPageSummaryData" EntityType="LoadTest2010Model.Store.LoadTestPageSummaryData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPerformanceCounter" EntityType="LoadTest2010Model.Store.LoadTestPerformanceCounter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPerformanceCounterCategory" EntityType="LoadTest2010Model.Store.LoadTestPerformanceCounterCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPerformanceCounterInstance" EntityType="LoadTest2010Model.Store.LoadTestPerformanceCounterInstance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestPerformanceCounterSample" EntityType="LoadTest2010Model.Store.LoadTestPerformanceCounterSample" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestReport" EntityType="LoadTest2010Model.Store.LoadTestReport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestReportPage" EntityType="LoadTest2010Model.Store.LoadTestReportPage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestReportRuns" EntityType="LoadTest2010Model.Store.LoadTestReportRuns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestRun" EntityType="LoadTest2010Model.Store.LoadTestRun" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestRunAgent" EntityType="LoadTest2010Model.Store.LoadTestRunAgent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestRunInterval" EntityType="LoadTest2010Model.Store.LoadTestRunInterval" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestScenario" EntityType="LoadTest2010Model.Store.LoadTestScenario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestSchemaRevision" EntityType="LoadTest2010Model.Store.LoadTestSchemaRevision" store:Type="Tables" store:Schema="dbo" store:Name="LoadTestSchemaRevision">
+      <DefiningQuery>SELECT 
+      [LoadTestSchemaRevision].[LoadTestSchemaRev] AS [LoadTestSchemaRev]
+      FROM [dbo].[LoadTestSchemaRevision] AS [LoadTestSchemaRevision]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LoadTestSqlTrace" EntityType="LoadTest2010Model.Store.LoadTestSqlTrace" store:Type="Tables" store:Schema="dbo" store:Name="LoadTestSqlTrace">
+      <DefiningQuery>SELECT 
+      [LoadTestSqlTrace].[LoadTestRunId] AS [LoadTestRunId], 
+      [LoadTestSqlTrace].[TextData] AS [TextData], 
+      [LoadTestSqlTrace].[Duration] AS [Duration], 
+      [LoadTestSqlTrace].[StartTime] AS [StartTime], 
+      [LoadTestSqlTrace].[EndTime] AS [EndTime], 
+      [LoadTestSqlTrace].[Reads] AS [Reads], 
+      [LoadTestSqlTrace].[Writes] AS [Writes], 
+      [LoadTestSqlTrace].[CPU] AS [CPU], 
+      [LoadTestSqlTrace].[EventClass] AS [EventClass]
+      FROM [dbo].[LoadTestSqlTrace] AS [LoadTestSqlTrace]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LoadTestSystemUnderTest" EntityType="LoadTest2010Model.Store.LoadTestSystemUnderTest" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestSystemUnderTestTag" EntityType="LoadTest2010Model.Store.LoadTestSystemUnderTestTag" store:Type="Tables" store:Schema="dbo" store:Name="LoadTestSystemUnderTestTag">
+      <DefiningQuery>SELECT 
+      [LoadTestSystemUnderTestTag].[LoadTestRunId] AS [LoadTestRunId], 
+      [LoadTestSystemUnderTestTag].[SystemUnderTestId] AS [SystemUnderTestId], 
+      [LoadTestSystemUnderTestTag].[MachineTag] AS [MachineTag]
+      FROM [dbo].[LoadTestSystemUnderTestTag] AS [LoadTestSystemUnderTestTag]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LoadTestTestDetail" EntityType="LoadTest2010Model.Store.LoadTestTestDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestTestLog" EntityType="LoadTest2010Model.Store.LoadTestTestLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestTestSummaryData" EntityType="LoadTest2010Model.Store.LoadTestTestSummaryData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestThresholdMessage" EntityType="LoadTest2010Model.Store.LoadTestThresholdMessage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestTransactionDetail" EntityType="LoadTest2010Model.Store.LoadTestTransactionDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTestTransactionSummaryData" EntityType="LoadTest2010Model.Store.LoadTestTransactionSummaryData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserProfile" EntityType="LoadTest2010Model.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebLoadTestErrorDetail" EntityType="LoadTest2010Model.Store.WebLoadTestErrorDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebLoadTestRequestMap" EntityType="LoadTest2010Model.Store.WebLoadTestRequestMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebLoadTestTransaction" EntityType="LoadTest2010Model.Store.WebLoadTestTransaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_Membership" EntityType="LoadTest2010Model.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="LoadTest2010Model.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_Roles" EntityType="LoadTest2010Model.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="LoadTest2010Model.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__LoadTestC__LoadT__4AB81AF0" Association="LoadTest2010Model.Store.FK__LoadTestC__LoadT__4AB81AF0">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestCase" EntitySet="LoadTestCase" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestD__LoadT__5AEE82B9" Association="LoadTest2010Model.Store.FK__LoadTestD__LoadT__5AEE82B9">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestDataCollectorLog" EntitySet="LoadTestDataCollectorLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestF__LoadT__5BE2A6F2" Association="LoadTest2010Model.Store.FK__LoadTestF__LoadT__5BE2A6F2">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestFileAttachment" EntitySet="LoadTestFileAttachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestF__LoadT__5CD6CB2B" Association="LoadTest2010Model.Store.FK__LoadTestF__LoadT__5CD6CB2B">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestFileAttachmentChunk" EntitySet="LoadTestFileAttachmentChunk" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestM__LoadT__4BAC3F29" Association="LoadTest2010Model.Store.FK__LoadTestM__LoadT__4BAC3F29">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestMessage" EntitySet="LoadTestMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestP__LoadT__4D94879B" Association="LoadTest2010Model.Store.FK__LoadTestP__LoadT__4D94879B">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestPerformanceCounter" EntitySet="LoadTestPerformanceCounter" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestP__LoadT__4E88ABD4" Association="LoadTest2010Model.Store.FK__LoadTestP__LoadT__4E88ABD4">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestPerformanceCounterCategory" EntitySet="LoadTestPerformanceCounterCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestP__LoadT__4F7CD00D" Association="LoadTest2010Model.Store.FK__LoadTestP__LoadT__4F7CD00D">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestPerformanceCounterInstance" EntitySet="LoadTestPerformanceCounterInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestP__LoadT__5070F446" Association="LoadTest2010Model.Store.FK__LoadTestP__LoadT__5070F446">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestPerformanceCounterSample" EntitySet="LoadTestPerformanceCounterSample" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestR__LoadT__5165187F" Association="LoadTest2010Model.Store.FK__LoadTestR__LoadT__5165187F">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestRunAgent" EntitySet="LoadTestRunAgent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestR__LoadT__52593CB8" Association="LoadTest2010Model.Store.FK__LoadTestR__LoadT__52593CB8">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestRunInterval" EntitySet="LoadTestRunInterval" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestS__LoadT__534D60F1" Association="LoadTest2010Model.Store.FK__LoadTestS__LoadT__534D60F1">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestScenario" EntitySet="LoadTestScenario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestS__LoadT__571DF1D5" Association="LoadTest2010Model.Store.FK__LoadTestS__LoadT__571DF1D5">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestSqlTrace" EntitySet="LoadTestSqlTrace" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestS__LoadT__5812160E" Association="LoadTest2010Model.Store.FK__LoadTestS__LoadT__5812160E">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestSystemUnderTest" EntitySet="LoadTestSystemUnderTest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestS__LoadT__59063A47" Association="LoadTest2010Model.Store.FK__LoadTestS__LoadT__59063A47">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestSystemUnderTestTag" EntitySet="LoadTestSystemUnderTestTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestT__LoadT__4CA06362" Association="LoadTest2010Model.Store.FK__LoadTestT__LoadT__4CA06362">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestThresholdMessage" EntitySet="LoadTestThresholdMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoadTestT__LoadT__59FA5E80" Association="LoadTest2010Model.Store.FK__LoadTestT__LoadT__59FA5E80">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestTestLog" EntitySet="LoadTestTestLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WebLoadTe__LoadT__5441852A" Association="LoadTest2010Model.Store.FK__WebLoadTe__LoadT__5441852A">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="WebLoadTestErrorDetail" EntitySet="WebLoadTestErrorDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WebLoadTe__LoadT__5535A963" Association="LoadTest2010Model.Store.FK__WebLoadTe__LoadT__5535A963">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="WebLoadTestRequestMap" EntitySet="WebLoadTestRequestMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WebLoadTe__LoadT__5629CD9C" Association="LoadTest2010Model.Store.FK__WebLoadTe__LoadT__5629CD9C">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="WebLoadTestTransaction" EntitySet="WebLoadTestTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoadTestPageSummaryData_LoadTestRun1" Association="LoadTest2010Model.Store.FK_LoadTestPageSummaryData_LoadTestRun1">
+      <End Role="LoadTestRun" EntitySet="LoadTestRun" />
+      <End Role="LoadTestPageSummaryData" EntitySet="LoadTestPageSummaryData" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RoleId" Association="LoadTest2010Model.Store.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UserId" Association="LoadTest2010Model.Store.fk_UserId">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="LoadTestBrowsers">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="BrowserId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="BrowserId" Type="int" Nullable="false" />
+    <Property Name="BrowserName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoadTestCase">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TestCaseId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="ScenarioId" Type="int" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="TestCaseName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="TestElement" Type="image" />
+    <Property Name="TestType" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="LoadTestDataCollectorLog">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="DataCollectorLogId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="DataCollectorLogId" Type="int" Nullable="false" />
+    <Property Name="DataCollectorDisplayName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="TimestampColumnName" Type="nvarchar" MaxLength="128" />
+    <Property Name="DurationColumnName" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreateTableFormatString" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestDetailMessage">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="LoadTestDetailMessageId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="LoadTestDetailMessageId" Type="int" Nullable="false" />
+    <Property Name="TestDetailId" Type="int" Nullable="false" />
+    <Property Name="PageDetailId" Type="int" />
+    <Property Name="MessageTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestFileAttachment">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="FileAttachmentId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="FileAttachmentId" Type="int" Nullable="false" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Filename" Type="nvarchar" Nullable="false" MaxLength="260" />
+    <Property Name="FileSize" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestFileAttachmentChunk">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="FileAttachmentId" />
+      <PropertyRef Name="StartOffset" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="FileAttachmentId" Type="int" Nullable="false" />
+    <Property Name="StartOffset" Type="bigint" Nullable="false" />
+    <Property Name="EndOffset" Type="bigint" Nullable="false" />
+    <Property Name="ChunkLength" Type="bigint" Nullable="false" />
+    <Property Name="ChunkBytes" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestMessage">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="AgentId" />
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="MessageId" Type="int" Nullable="false" />
+    <Property Name="MessageType" Type="tinyint" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar" MaxLength="2048" />
+    <Property Name="SubType" Type="nvarchar" MaxLength="64" />
+    <Property Name="StackTrace" Type="ntext" />
+    <Property Name="MessageTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" />
+    <Property Name="RequestId" Type="int" />
+    <Property Name="TestLogId" Type="int" />
+  </EntityType>
+  <EntityType Name="LoadTestMessageType">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="MessageTypeId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="MessageTypeId" Type="int" Nullable="false" />
+    <Property Name="MessageType" Type="tinyint" Nullable="false" />
+    <Property Name="SubType" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="LoadTestNetworks">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="NetworkId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="NetworkId" Type="int" Nullable="false" />
+    <Property Name="NetworkName" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoadTestPageDetail">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="PageDetailId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="PageDetailId" Type="int" Nullable="false" />
+    <Property Name="TestDetailId" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="ResponseTime" Type="float" Nullable="false" />
+    <Property Name="ResponseTimeGoal" Type="float" Nullable="false" />
+    <Property Name="GoalExceeded" Type="bit" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Outcome" Type="tinyint" />
+    <Property Name="InMeasurementInterval" Type="bit" />
+  </EntityType>
+  <EntityType Name="LoadTestPageSummaryByNetwork">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="PageId" />
+      <PropertyRef Name="NetworkId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="NetworkId" Type="int" Nullable="false" />
+    <Property Name="PageCount" Type="int" Nullable="false" />
+    <Property Name="Average" Type="float" Nullable="false" />
+    <Property Name="Minimum" Type="float" Nullable="false" />
+    <Property Name="Maximum" Type="float" Nullable="false" />
+    <Property Name="Percentile90" Type="float" />
+    <Property Name="Percentile95" Type="float" />
+    <Property Name="Percentile99" Type="float" />
+    <Property Name="Goal" Type="float" />
+    <Property Name="PagesMeetingGoal" Type="int" />
+    <Property Name="Median" Type="float" />
+    <Property Name="StandardDeviation" Type="float" />
+  </EntityType>
+  <EntityType Name="LoadTestPageSummaryData">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="PageCount" Type="int" Nullable="false" />
+    <Property Name="Average" Type="float" Nullable="false" />
+    <Property Name="Minimum" Type="float" Nullable="false" />
+    <Property Name="Maximum" Type="float" Nullable="false" />
+    <Property Name="Percentile90" Type="float" />
+    <Property Name="Percentile95" Type="float" />
+    <Property Name="Percentile99" Type="float" />
+    <Property Name="Median" Type="float" />
+    <Property Name="StandardDeviation" Type="float" />
+  </EntityType>
+  <EntityType Name="LoadTestPerformanceCounter">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="CounterId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="CounterCategoryId" Type="int" Nullable="false" />
+    <Property Name="CounterId" Type="int" Nullable="false" />
+    <Property Name="CounterName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="HigherIsBetter" Type="bit" />
+  </EntityType>
+  <EntityType Name="LoadTestPerformanceCounterCategory">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="CounterCategoryId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="CounterCategoryId" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="StartTimeStamp100nSec" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestPerformanceCounterInstance">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="InstanceId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="CounterId" Type="int" Nullable="false" />
+    <Property Name="InstanceId" Type="int" Nullable="false" />
+    <Property Name="LoadTestItemId" Type="int" />
+    <Property Name="InstanceName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CumulativeValue" Type="real" />
+    <Property Name="OverallThresholdRuleResult" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="LoadTestPerformanceCounterSample">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TestRunIntervalId" />
+      <PropertyRef Name="InstanceId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TestRunIntervalId" Type="int" Nullable="false" />
+    <Property Name="InstanceId" Type="int" Nullable="false" />
+    <Property Name="ComputedValue" Type="real" />
+    <Property Name="RawValue" Type="bigint" Nullable="false" />
+    <Property Name="BaseValue" Type="bigint" Nullable="false" />
+    <Property Name="CounterFrequency" Type="bigint" Nullable="false" />
+    <Property Name="SystemFrequency" Type="bigint" Nullable="false" />
+    <Property Name="SampleTimeStamp" Type="bigint" Nullable="false" />
+    <Property Name="SampleTimeStamp100nSec" Type="bigint" Nullable="false" />
+    <Property Name="CounterType" Type="int" Nullable="false" />
+    <Property Name="ThresholdRuleResult" Type="tinyint" Nullable="false" />
+    <Property Name="ThresholdRuleMessageId" Type="int" />
+  </EntityType>
+  <EntityType Name="LoadTestReport">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="LoadTestName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="LastRunId" Type="int" Nullable="false" />
+    <Property Name="SelectNewRuns" Type="bit" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ReportType" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestReportPage">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CounterName" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoadTestReportRuns">
+    <Key>
+      <PropertyRef Name="ReportId" />
+      <PropertyRef Name="LoadTestRunId" />
+    </Key>
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestRun">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LoadTestName" Type="nvarchar" MaxLength="255" />
+    <Property Name="RunId" Type="char" Nullable="false" MaxLength="36" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RunDuration" Type="int" Nullable="false" />
+    <Property Name="WarmupTime" Type="int" Nullable="false" />
+    <Property Name="RunSettingUsed" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="IsLocalRun" Type="bit" Nullable="false" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Outcome" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="LoadTest" Type="image" />
+    <Property Name="Comment" Type="ntext" />
+    <Property Name="LoadTestSchemaRev" Type="int" />
+    <Property Name="CooldownTime" Type="int" />
+  </EntityType>
+  <EntityType Name="LoadTestRunAgent">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="AgentId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="AgentName" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoadTestRunInterval">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TestRunIntervalId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TestRunIntervalId" Type="int" Nullable="false" />
+    <Property Name="IntervalStartTime" Type="datetime" Nullable="false" />
+    <Property Name="IntervalEndTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestScenario">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="ScenarioId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="ScenarioId" Type="int" Nullable="false" />
+    <Property Name="ScenarioName" Type="nvarchar" Nullable="false" MaxLength="64" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'LoadTest2010.dbo.LoadTestSchemaRevision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LoadTestSchemaRevision">
+    <Key>
+      <PropertyRef Name="LoadTestSchemaRev" />
+    </Key>
+    <Property Name="LoadTestSchemaRev" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'LoadTest2010.dbo.LoadTestSqlTrace' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LoadTestSqlTrace">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="EventClass" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TextData" Type="ntext" />
+    <Property Name="Duration" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Reads" Type="bigint" />
+    <Property Name="Writes" Type="bigint" />
+    <Property Name="CPU" Type="int" />
+    <Property Name="EventClass" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestSystemUnderTest">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="SystemUnderTestId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="SystemUnderTestId" Type="int" Nullable="false" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'LoadTest2010.dbo.LoadTestSystemUnderTestTag' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LoadTestSystemUnderTestTag">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="SystemUnderTestId" />
+      <PropertyRef Name="MachineTag" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="SystemUnderTestId" Type="int" Nullable="false" />
+    <Property Name="MachineTag" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoadTestTestDetail">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TestDetailId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TestDetailId" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="ElapsedTime" Type="float" Nullable="false" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="BrowserId" Type="int" />
+    <Property Name="NetworkId" Type="int" />
+    <Property Name="Outcome" Type="tinyint" />
+    <Property Name="TestLogId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="InMeasurementInterval" Type="bit" />
+  </EntityType>
+  <EntityType Name="LoadTestTestLog">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="AgentId" />
+      <PropertyRef Name="TestLogId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="TestLogId" Type="int" Nullable="false" />
+    <Property Name="TestLog" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTestTestSummaryData">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TestCaseId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="TestsRun" Type="int" Nullable="false" />
+    <Property Name="Average" Type="float" Nullable="false" />
+    <Property Name="Minimum" Type="float" Nullable="false" />
+    <Property Name="Maximum" Type="float" Nullable="false" />
+    <Property Name="Percentile90" Type="float" />
+    <Property Name="Percentile95" Type="float" />
+    <Property Name="Percentile99" Type="float" />
+    <Property Name="Median" Type="float" />
+    <Property Name="StandardDeviation" Type="float" />
+  </EntityType>
+  <EntityType Name="LoadTestThresholdMessage">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TestRunIntervalId" Type="int" Nullable="false" />
+    <Property Name="CounterInstanceId" Type="int" Nullable="false" />
+    <Property Name="MessageId" Type="int" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="LoadTestTransactionDetail">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TransactionDetailId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TransactionDetailId" Type="int" Nullable="false" />
+    <Property Name="TestDetailId" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="TransactionId" Type="int" Nullable="false" />
+    <Property Name="ElapsedTime" Type="float" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="InMeasurementInterval" Type="bit" />
+    <Property Name="ResponseTime" Type="float" />
+  </EntityType>
+  <EntityType Name="LoadTestTransactionSummaryData">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TransactionId" Type="int" Nullable="false" />
+    <Property Name="TransactionCount" Type="int" Nullable="false" />
+    <Property Name="Average" Type="float" Nullable="false" />
+    <Property Name="Minimum" Type="float" Nullable="false" />
+    <Property Name="Maximum" Type="float" Nullable="false" />
+    <Property Name="Percentile90" Type="float" />
+    <Property Name="Percentile95" Type="float" />
+    <Property Name="Percentile99" Type="float" />
+    <Property Name="Median" Type="float" />
+    <Property Name="StandardDeviation" Type="float" />
+    <Property Name="AvgTransactionTime" Type="float" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+  </EntityType>
+  <EntityType Name="WebLoadTestErrorDetail">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="AgentId" />
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="MessageId" Type="int" Nullable="false" />
+    <Property Name="WebTestRequestResult" Type="image" />
+  </EntityType>
+  <EntityType Name="WebLoadTestRequestMap">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="RequestId" Type="int" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="RequestUri" Type="nvarchar" Nullable="false" MaxLength="2048" />
+    <Property Name="ResponseTimeGoal" Type="float" />
+  </EntityType>
+  <EntityType Name="WebLoadTestTransaction">
+    <Key>
+      <PropertyRef Name="LoadTestRunId" />
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="LoadTestRunId" Type="int" Nullable="false" />
+    <Property Name="TransactionId" Type="int" Nullable="false" />
+    <Property Name="TestCaseId" Type="int" Nullable="false" />
+    <Property Name="TransactionName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Goal" Type="float" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsConfirmed" Type="bit" />
+    <Property Name="LastPasswordFailureDate" Type="datetime" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordChangedDate" Type="datetime" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__LoadTestC__LoadT__4AB81AF0">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestCase" Type="LoadTest2010Model.Store.LoadTestCase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestCase">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestD__LoadT__5AEE82B9">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestDataCollectorLog" Type="LoadTest2010Model.Store.LoadTestDataCollectorLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestDataCollectorLog">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestF__LoadT__5BE2A6F2">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestFileAttachment" Type="LoadTest2010Model.Store.LoadTestFileAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestFileAttachment">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestF__LoadT__5CD6CB2B">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestFileAttachmentChunk" Type="LoadTest2010Model.Store.LoadTestFileAttachmentChunk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestFileAttachmentChunk">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestM__LoadT__4BAC3F29">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestMessage" Type="LoadTest2010Model.Store.LoadTestMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestMessage">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestP__LoadT__4D94879B">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestPerformanceCounter" Type="LoadTest2010Model.Store.LoadTestPerformanceCounter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestPerformanceCounter">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestP__LoadT__4E88ABD4">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestPerformanceCounterCategory" Type="LoadTest2010Model.Store.LoadTestPerformanceCounterCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestPerformanceCounterCategory">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestP__LoadT__4F7CD00D">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestPerformanceCounterInstance" Type="LoadTest2010Model.Store.LoadTestPerformanceCounterInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestPerformanceCounterInstance">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestP__LoadT__5070F446">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestPerformanceCounterSample" Type="LoadTest2010Model.Store.LoadTestPerformanceCounterSample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestPerformanceCounterSample">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestR__LoadT__5165187F">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestRunAgent" Type="LoadTest2010Model.Store.LoadTestRunAgent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestRunAgent">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestR__LoadT__52593CB8">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestRunInterval" Type="LoadTest2010Model.Store.LoadTestRunInterval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestRunInterval">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestS__LoadT__534D60F1">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestScenario" Type="LoadTest2010Model.Store.LoadTestScenario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestScenario">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestS__LoadT__571DF1D5">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestSqlTrace" Type="LoadTest2010Model.Store.LoadTestSqlTrace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestSqlTrace">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestS__LoadT__5812160E">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestSystemUnderTest" Type="LoadTest2010Model.Store.LoadTestSystemUnderTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestSystemUnderTest">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestS__LoadT__59063A47">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestSystemUnderTestTag" Type="LoadTest2010Model.Store.LoadTestSystemUnderTestTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestSystemUnderTestTag">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestT__LoadT__4CA06362">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestThresholdMessage" Type="LoadTest2010Model.Store.LoadTestThresholdMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestThresholdMessage">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoadTestT__LoadT__59FA5E80">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestTestLog" Type="LoadTest2010Model.Store.LoadTestTestLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestTestLog">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WebLoadTe__LoadT__5441852A">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="WebLoadTestErrorDetail" Type="LoadTest2010Model.Store.WebLoadTestErrorDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="WebLoadTestErrorDetail">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WebLoadTe__LoadT__5535A963">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="WebLoadTestRequestMap" Type="LoadTest2010Model.Store.WebLoadTestRequestMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="WebLoadTestRequestMap">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WebLoadTe__LoadT__5629CD9C">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="WebLoadTestTransaction" Type="LoadTest2010Model.Store.WebLoadTestTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="WebLoadTestTransaction">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoadTestPageSummaryData_LoadTestRun1">
+    <End Role="LoadTestRun" Type="LoadTest2010Model.Store.LoadTestRun" Multiplicity="1" />
+    <End Role="LoadTestPageSummaryData" Type="LoadTest2010Model.Store.LoadTestPageSummaryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadTestRun">
+        <PropertyRef Name="LoadTestRunId" />
+      </Principal>
+      <Dependent Role="LoadTestPageSummaryData">
+        <PropertyRef Name="LoadTestRunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RoleId">
+    <End Role="webpages_Roles" Type="LoadTest2010Model.Store.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="LoadTest2010Model.Store.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UserId">
+    <End Role="UserProfile" Type="LoadTest2010Model.Store.UserProfile" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="LoadTest2010Model.Store.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

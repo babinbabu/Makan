@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b02269e0c10744f58c6dc5a2da39fb58" Name="Diagram1">
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestBrowser" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestCase" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestDataCollectorLog" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestDetailMessage" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestFileAttachment" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestFileAttachmentChunk" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestMessage" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestMessageType" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestNetwork" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPageDetail" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPageSummaryByNetwork" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPageSummaryData" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPerformanceCounter" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPerformanceCounterCategory" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPerformanceCounterInstance" Width="1.5" PointX="3" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestPerformanceCounterSample" Width="1.5" PointX="3" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestReport" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestReportPage" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestReportRun" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestRun" Width="1.5" PointX="0.75" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestRunAgent" Width="1.5" PointX="3" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestRunInterval" Width="1.5" PointX="3" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestScenario" Width="1.5" PointX="3" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestSchemaRevision" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestSqlTrace" Width="1.5" PointX="3" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestSystemUnderTest" Width="1.5" PointX="3" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestSystemUnderTestTag" Width="1.5" PointX="3" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestTestDetail" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestTestLog" Width="1.5" PointX="3" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestTestSummaryData" Width="1.5" PointX="11.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestThresholdMessage" Width="1.5" PointX="3" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestTransactionDetail" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.LoadTestTransactionSummaryData" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.UserProfile" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.WebLoadTestErrorDetail" Width="1.5" PointX="3" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.WebLoadTestRequestMap" Width="1.5" PointX="3" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.WebLoadTestTransaction" Width="1.5" PointX="3" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.webpages_Membership" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.webpages_OAuthMembership" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoadTest2010Model.webpages_Roles" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestC__LoadT__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestD__LoadT__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestF__LoadT__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestF__LoadT__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestM__LoadT__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK_LoadTestPageSummaryData_LoadTestRun1" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestP__LoadT__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestP__LoadT__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestP__LoadT__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestP__LoadT__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestR__LoadT__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestR__LoadT__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestS__LoadT__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestS__LoadT__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestS__LoadT__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestS__LoadT__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestT__LoadT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__LoadTestT__LoadT__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__WebLoadTe__LoadT__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__WebLoadTe__LoadT__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.FK__WebLoadTe__LoadT__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="LoadTest2010Model.webpages_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="41ea616c-16fe-42a7-99de-3e3e6ff93258" name="Babin@AGMO-PC 2016-11-01 12:47:56" runUser="AGMO-PC\Babin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="de5f3e74-417d-4191-82b5-b3e4317b3b44">
+    <Description>These are default test settings for a local test run.</Description>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Babin_AGMO-PC 2016-11-01 12_47_56" />
+  </TestSettings>
+  <Times creation="2016-11-01T12:47:56.1462654+08:00" queuing="2016-11-01T12:48:00.8189541+08:00" start="2016-11-01T12:48:01.3361596+08:00" finish="2016-11-01T12:48:16.6994266+08:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <WebTest name="Login" storage="d:\project\loadtestresult\runloadtest.loadtest\login.webtest" id="e7fbb852-f877-4c0b-974a-def05fd51f50" persistedWebTest="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pg0KPFdlYlRlc3QgTmFtZT0iTG9naW4iIElkPSJlN2ZiYjg1Mi1mODc3LTRjMGItOTc0YS1kZWYwNWZkNTFmNTAiIE93bmVyPSIiIFByaW9yaXR5PSIyMTQ3NDgzNjQ3IiBFbmFibGVkPSJUcnVlIiBDc3NQcm9qZWN0U3RydWN0dXJlPSIiIENzc0l0ZXJhdGlvbj0iIiBUaW1lb3V0PSIwIiBXb3JrSXRlbUlkcz0iIiB4bWxucz0iaHR0cDovL21pY3Jvc29mdC5jb20vc2NoZW1hcy9WaXN1YWxTdHVkaW8vVGVhbVRlc3QvMjAxMCIgRGVzY3JpcHRpb249IiIgQ3JlZGVudGlhbFVzZXJOYW1lPSIiIENyZWRlbnRpYWxQYXNzd29yZD0iIiBQcmVBdXRoZW50aWNhdGU9IlRydWUiIFByb3h5PSJkZWZhdWx0IiBTdG9wT25FcnJvcj0iRmFsc2UiIFJlY29yZGVkUmVzdWx0RmlsZT0iIiBSZXN1bHRzTG9jYWxlPSIiPg0KICA8SXRlbXM+DQogICAgPFJlcXVlc3QgTWV0aG9kPSJQT1NUIiBHdWlkPSI0NjVlY2ZjNy1iMzBhLTQ4YTctYjEzNS0yODI5YmM1ZDNhZDkiIFZlcnNpb249IjEuMSIgVXJsPSJ7e3VybH19L2FwaS9Db3JlL3YyMDAvYXBwVXNlci9Mb2dpbj9hcHBLZXk9e3thcHBLZXl9fSIgVGhpbmtUaW1lPSIwIiBUaW1lb3V0PSIzMDAiIFBhcnNlRGVwZW5kZW50UmVxdWVzdHM9IlRydWUiIEZvbGxvd1JlZGlyZWN0cz0iVHJ1ZSIgUmVjb3JkUmVzdWx0PSJUcnVlIiBDYWNoZT0iRmFsc2UiIFJlc3BvbnNlVGltZUdvYWw9IjAiIEVuY29kaW5nPSJ1dGYtOCIgRXhwZWN0ZWRIdHRwU3RhdHVzQ29kZT0iMCIgRXhwZWN0ZWRSZXNwb25zZVVybD0iIiBSZXBvcnRpbmdOYW1lPSIiIElnbm9yZUh0dHBTdGF0dXNDb2RlPSJGYWxzZSI+DQogICAgICA8U3RyaW5nSHR0cEJvZHkgQ29udGVudFR5cGU9InRleHQvanNvbiIgSW5zZXJ0Qnl0ZU9yZGVyTWFyaz0iRmFsc2UiPmV3QUtBQ0FBRFFBS0FDQUFJZ0JFQUdVQWRnQnBBR01BWlFCSkFHUUFJZ0E2QUNJQVlnQTFBR01BT0FCa0FEZ0FaUUExQURRQU9BQTNBR01BWVFBeEFEWUFJZ0FzQUFvQUlBQU5BQW9BSUFBaUFFUUFaUUIyQUdrQVl3QmxBRlFBZVFCd0FHVUFJZ0E2QURFQUxBQUtBQ0FBSUFBTkFBb0FJZ0JGQUcwQVlRQnBBR3dBSWdBNkFDSUFkQUJvQUdFQWJRQXhBRUFBWVFCbkFHMEFid0J6QUhRQWRRQmtBR2tBYndBdUFHTUFid0J0QUNJQUxBQUtBQ0FBRFFBS0FDQUFJZ0JRQUdFQWN3QnpBSGNBYndCeUFHUUFJZ0E2QUNJQU1RQXlBRE1BTkFBMUFEWUFJZ0FOQUFvQWZRQT08L1N0cmluZ0h0dHBCb2R5Pg0KICAgIDwvUmVxdWVzdD4NCiAgPC9JdGVtcz4NCiAgPENvbnRleHRQYXJhbWV0ZXJzPg0KICAgIDxDb250ZXh0UGFyYW1ldGVyIE5hbWU9InVybCIgVmFsdWU9Imh0dHA6Ly9qaXhpdWFwcC1zdGFnaW5nLmNsb3VkYXBwLm5ldCIgLz4NCiAgICA8Q29udGV4dFBhcmFtZXRlciBOYW1lPSJhcHBLZXkiIFZhbHVlPSJ1YkZkOWxRcGhOWGh1aS1iTVk1c3ljR3RiMVNnTDN5WXlINHBlTmowUHJISG5yWmhUWkxvR0cwMlFkWHBnLXZzSVl2b0tBME9tQV83TUtpdjhiaG1qQSIgLz4NCiAgPC9Db250ZXh0UGFyYW1ldGVycz4NCjwvV2ViVGVzdD4=">
+      <Execution id="75092422-02bb-4760-9614-0e49cd2ad5c2" />
+    </WebTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry isTransparent="false" testId="e7fbb852-f877-4c0b-974a-def05fd51f50" executionId="75092422-02bb-4760-9614-0e49cd2ad5c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <WebTestResult executionId="75092422-02bb-4760-9614-0e49cd2ad5c2" testId="e7fbb852-f877-4c0b-974a-def05fd51f50" testName="Login" computerName="AGMO-PC" duration="00:00:04.3605116" startTime="2016-11-01T12:48:01.4435041+08:00" endTime="2016-11-01T12:48:16.6403863+08:00" testType="4e7599fa-5ecb-43e9-a887-cd63cf72d207" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="75092422-02bb-4760-9614-0e49cd2ad5c2">
+      <ResultFiles>
+        <ResultFile path="Login.webtestResult" />
+      </ResultFiles>
+      <TestSettings name="Local" id="de5f3e74-417d-4191-82b5-b3e4317b3b44">
+        <Description>These are default test settings for a local test run.</Description>
+        <Execution>
+          <TestTypeSpecific>
+            <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+              <Browser name="Internet Explorer 9.0" MaxConnections="6">
+                <Headers>
+                  <Header name="User-Agent" value="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)" />
+                  <Header name="Accept" value="*/*" />
+                  <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+                  <Header name="Accept-Encoding" value="GZIP" />
+                </Headers>
+              </Browser>
+            </WebTestRunConfiguration>
+          </TestTypeSpecific>
+          <AgentRule name="Execution Agents">
+          </AgentRule>
+        </Execution>
+        <Deployment runDeploymentRoot="Babin_AGMO-PC 2016-11-01 12_47_56" />
+      </TestSettings>
+      <WebTestResultFilePath>Babin_AGMO-PC 2016-11-01 12_47_56\In\75092422-02bb-4760-9614-0e49cd2ad5c2\Login.webtestResult</WebTestResultFilePath>
+    </WebTestResult>
+  </Results>
+</TestRun>

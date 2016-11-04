@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="LoadTestResult">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Load Test Result </title>
+
+    <!-- Bootstrap -->
+    <link href="~/Content/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/css/bootstrap/font-awesome.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="~/Content/css/bootstrap/nprogress.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/css/bootstrap/green.css" rel="stylesheet" />
+    <!-- bootstrap-progressbar -->
+    <link href="~/Content/css/bootstrap/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
+    <!-- JQVMap -->
+    <link href="~/Content/css/bootstrap/jqvmap.min.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="~/Content/css/bootstrap/custom.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap/jquery.growl.css" rel="stylesheet" />
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="" class="site_title"><i class="fa fa-paw"></i><span>Load Test !</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="~/Images/img.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-home"></i>Run Load Test </a>
+                                </li>
+                                <li ng-class="{active: $route.current.activetab == 'loadlist'}"><a href="#LoadTestResult"><i class="fa fa-edit"></i>Load Test Result </a>
+                                </li>
+                                @*<li><a><i class="fa fa-desktop"></i> UI Elements</a>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Tables </a>
+                  </li>*@
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a title="Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Images/img.png" />John Doe
+                   
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="#ChangePassword">Change Password</a></li>
+                                    <li><a href="/Account/LogOff"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+
+                <!-- /top tiles -->
+                <div class="row">
+                    <div ng-view></div>
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+        </div>
+        <footer>
+            <div class="pull-right">
+                Load Test - Admin Template by <a href="http://www.agmostudio.com" target="_blank">Agmo Studio sdn bhd</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+    </div>
+
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/custom.min.js"></script>
+    <script src="~/Content/js/bootstrap-select.js"></script>
+    <script src="~/Content/js/Angular/canvasjs.min.js"></script>
+    <script src="~/Content/js/Angular/jquery.blockUI.min.js"></script>
+    <script src="~/Content/js/Angular/angular.js"></script>
+
+    <script src="~/Content/js/Angular/angular-route.js"></script>
+    <script src="~/Content/js/Angular/Controller/checklist-model.js"></script>
+    <script src="~/Content/js/Angular/Controller/jquery.growl.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Content/js/Angular/App.js"></script>
+    <script src="~/Content/js/Angular/Controller/LoadTestList.js"></script>
+    <script src="~/Content/js/Angular/Controller/ChangePassword.js"></script>
+    <script src="~/Content/js/Angular/Controller/DetailedResult.js"></script>
+    <script src="~/Content/js/Angular/Controller/ErrorDetails.js"></script>
+    <script src="~/Content/js/Angular/Controller/GraphRepesentation.js"></script>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
+</html>
