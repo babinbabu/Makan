@@ -59,11 +59,13 @@ namespace LoadTestResult.Models
             SlowestTestName = db.LoadTestCases.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).TestCaseName;
             SlowestTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).OrderByDescending(e => e.Percentile95).Take(5).Sum(p => p.Percentile95);
             MaxUserLoad = db.LoadTestTestDetails.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Select(e => e.UserId).Distinct().Count();
-            var entityLoadTestTestSummaryData = db.LoadTestTestSummaryDatas.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId);
-            if(entityLoadTestTestSummaryData!=null)
+            
+            var entityLoadTestTestSummaryDatas = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId);
+            if (entityLoadTestTestSummaryDatas != null)
             {
-            TestsPerSec =(float)entityLoadTestTestSummaryData.TestsRun/ entityLoadTestRun.RunDuration;
+                TestsPerSec = (float)entityLoadTestTestSummaryDatas.Sum(x=>x.TestsRun) / entityLoadTestRun.RunDuration;
             }
+
             TestsFailed = entityLoadTestRun.LoadTestMessages.Where(x => x.MessageType == 2).Count();
             AvgTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Sum(x=>x.Average);
             PagesPerSec =(double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.PageCount) / entityLoadTestRun.RunDuration;
@@ -113,7 +115,7 @@ namespace LoadTestResult.Models
                     }
                 }
                 TestResults = new List<TestResultsModels>();
-                var entityLoadTestTestSummaryDatas = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId);
+                
                 if (entityLoadTestTestSummaryDatas != null)
                 {
                     foreach (var entityLoadTestTestSummaryData in entityLoadTestTestSummaryDatas)
