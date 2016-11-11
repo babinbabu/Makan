@@ -18,8 +18,8 @@ namespace LoadTestResult.Models
         {
             int index = instance.IndexOf("(");
             if (index > 0)
-                instance = instance.Substring(0, index).Replace("{","(").Replace("}",")");
-            PageName = instance;
+                PageName = instance.Substring(0, index);
+            
             Axis = new List<GraphPloats>();
             foreach (var entityLoadTestPageDetail in entityLoadTestPageDetails.Value)
             {

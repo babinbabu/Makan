@@ -7,11 +7,17 @@ using System.Web;
 
 namespace LoadTestResult
 {
-    public enum ControllerandAgents:byte
+    public enum ControllerandAgents : byte
     {
         [Description("Available MBytes")]
-        AvailableMBytes=0,
+        AvailableMBytes = 0,
         [Description("%Processor Time")]
-        ProcessorTime=48,
+        ProcessorTime = 48,
+    }
+    public enum OverallThresholdRuleResult : byte
+    {
+        critical = 2,
+        warnings = 1,
+        ok = 0
     }
 }

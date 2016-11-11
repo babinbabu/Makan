@@ -33,6 +33,7 @@ namespace LoadTestResult.Controllers
             return Json(Results, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
         public JsonResult GetLoadTestBasedOnName(string loadTestName, int page = 1, int itemsPerPage = 20)
         {
             long TotalRecord = 0;
@@ -44,6 +45,7 @@ namespace LoadTestResult.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
         public JsonResult GetLoadTestBasedOnId(int LoadTestRunId)
         {
 
@@ -76,7 +78,7 @@ namespace LoadTestResult.Controllers
             using (Entity.db_LoadTest2010Entities db = new Entity.db_LoadTest2010Entities())
             {
                 var LoadTestRunStartTime = db.LoadTestRuns.FirstOrDefault(x => x.LoadTestRunId == LoadTestRunId).StartTime;
-                var entityLoadTestPageDetails = db.LoadTestPageDetails.Where(x => x.LoadTestRunId == LoadTestRunId && x.Outcome==0).GroupBy(x => x.PageId);
+                var entityLoadTestPageDetails = db.LoadTestPageDetails.Where(x => x.LoadTestRunId == LoadTestRunId && x.Outcome == 0).GroupBy(x => x.PageId);
                 foreach (var entityLoadTestPageDetail in entityLoadTestPageDetails)
                 {
                     KeyValuePair<int, List<Entity.LoadTestPageDetail>> collection = new KeyValuePair<int, List<Entity.LoadTestPageDetail>>(entityLoadTestPageDetail.Key, entityLoadTestPageDetail.ToList());
@@ -86,22 +88,21 @@ namespace LoadTestResult.Controllers
             }
             return Json(Result, JsonRequestBehavior.AllowGet);
         }
-
+        
         public JsonResult GetResultCompare(List<int> LoadTestRunIds)
         {
 
             List<LoadTestResultModels> Results = new List<LoadTestResultModels>();
             using (Entity.db_LoadTest2010Entities db = new Entity.db_LoadTest2010Entities())
             {
-                foreach (var LoadTestRunId in LoadTestRunIds)
+                var entityLoadTestRuns = db.LoadTestRuns.Where(e => LoadTestRunIds.Contains(e.LoadTestRunId));
+                if (entityLoadTestRuns.Count() > 0)
                 {
-                    var entityLoadTestRuns = db.LoadTestRuns.FirstOrDefault(e => e.LoadTestRunId == LoadTestRunId);
-                    if (entityLoadTestRuns != null)
+                    foreach (var entityLoadTestRun in entityLoadTestRuns)
                     {
-                        Results.Add(new LoadTestResultModels(entityLoadTestRuns, db, true));
+                        Results.Add(new LoadTestResultModels(entityLoadTestRun, db, true));
                     }
                 }
-
 
             }
 

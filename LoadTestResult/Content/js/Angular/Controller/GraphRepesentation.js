@@ -36,10 +36,11 @@
                    for (var j = 0; j < response.data[i].Axis.length; ++j) {
                        XandYPoints.push({ y: response.data[i].Axis[j].YAxis })
                    }
-                   GraphData.push({ type: "line", name: response.data[i].PageName, showInLegend: true, dataPoints: XandYPoints});
+                   GraphData.push({ name: response.data[i].PageName, data: XandYPoints });
                    XandYPoints = [];
                }
-               DrawGraph(GraphData);
+               //DrawGraph(GraphData);
+               PageResponseChart(GraphData);
            });
     }
     function DrawGraph(GraphData) {
@@ -77,5 +78,36 @@
         });
 
         chart.render();
+    }
+    function PageResponseChart(GraphData) {
+
+        Highcharts.chart('pageResponseChartContainer', {
+
+            title: {
+                text: 'Page Response Time Graph'
+            },
+
+            subtitle: {
+                text: 'Each Page Response Time'
+            },
+            
+            xAxis: {
+                minTickInterval: 5,
+ 
+            },
+            yAxis: {
+                title: {
+                    text: "Response Time (Sec)"
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.y} sec'
+            },
+
+            series: GraphData
+
+        });
     }
 }]);

@@ -354,6 +354,7 @@
     <Content Include="Content\css\bootstrap\nprogress.css" />
     <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\js\Angular\angular-route.js" />
     <Content Include="Content\js\Angular\angular.js" />
     <Content Include="Content\js\Angular\App.js" />
@@ -362,6 +363,7 @@
     <Content Include="Content\js\Angular\Controller\DetailedResult.js" />
     <Content Include="Content\js\Angular\Controller\ErrorDetails.js" />
     <Content Include="Content\js\Angular\Controller\GraphRepesentation.js" />
+    <Content Include="Content\js\Angular\Controller\highcharts.js" />
     <Content Include="Content\js\Angular\Controller\jquery.growl.js" />
     <Content Include="Content\js\Angular\Controller\LoadTestList.js" />
     <Content Include="Content\js\Angular\Controller\ChangePassword.js" />

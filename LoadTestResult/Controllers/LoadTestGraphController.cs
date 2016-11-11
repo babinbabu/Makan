@@ -65,7 +65,7 @@ namespace LoadTestResult.Controllers
             return Json(Result, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public JsonResult GetControllerandAgents(int loadTestRunId = 3141)
+        public JsonResult GetControllerandAgents(int loadTestRunId)
         {
             List<LoadTestOverallGraphModels> Result = new List<LoadTestOverallGraphModels>();
             using (Entity.db_LoadTest2010Entities db = new Entity.db_LoadTest2010Entities())

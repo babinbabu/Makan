@@ -16,39 +16,39 @@
                     <div class="x_content">
                         <table class="table table-bordered">
                             <tr>
-                                <td>Load Test Name</td>
+                                <td><span class="label label-default">Load Test Name</span></td>
                                 <td>{{loadTestResult.LoadTestName}}</td>
                             </tr>
                             <tr>
-                                <td>Description</td>
+                                <td><span class="label label-default">Description</span></td>
                                 <td>{{loadTestResult.Description}}</td>
                             </tr>
                             <tr>
-                                <td>Start Time</td>
+                                <td><span class="label label-default">Start Time</span></td>
                                 <td>{{loadTestResult.StartTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
                             </tr>
                              <tr>
-                                <td>End Time</td>
+                                <td><span class="label label-default">End Time</span></td>
                                 <td>{{loadTestResult.EndTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
                             </tr>
                              <tr>
-                                <td>Warm-up Duration</td>
+                                <td><span class="label label-default">Warm-up Duration</span></td>
                                 <td>{{loadTestResult.WarmupTime | secondsToTime}}</td>
                             </tr>
                              <tr>
-                                <td>Duration</td>
+                                <td><span class="label label-default">Duration</span></td>
                                 <td>{{loadTestResult.RunDuration | secondsToTime}}</td>
                             </tr>
                              <tr>
-                                <td>Controller</td>
+                                <td><span class="label label-default">Controller</span></td>
                                 <td>{{loadTestResult.IsLocalRun | ControllerFilter}}</td>
                             </tr>
                              <tr>
-                                <td>Number of Agents</td>
+                                <td><span class="label label-default">Number of Agents</span></td>
                                 <td>{{loadTestResult.NumberOfAgents}}</td>
                             </tr>
                              <tr>
-                                <td>Run Settings Used</td>
+                                <td><span class="label label-default">Run Settings Used</span></td>
                                 <td>{{loadTestResult.RunSettingUsed}}</td>
                             </tr>
                             
@@ -96,48 +96,48 @@
                     <div class="x_content">
                         <table class="table table-bordered">
                             <tr>
-                                <td>Max User Load</td>
+                                <td><span class="label label-default">Max User Load</span></td>
                                 <td>{{loadTestResult.MaxUserLoad}}</td>
                             </tr>
                             <tr>
-                                <td>Tests/Sec</td>
+                                <td><span class="label label-default">Tests/Sec</span></td>
                                 <td>{{loadTestResult.TestsPerSec | setDecimal:2}}</td>
                             </tr>
                             <tr>
-                                <td>Tests Failed</td>
+                                <td><span class="label label-default">Tests Failed</span></td>
                                 <td>{{loadTestResult.TestsFailed}}</td>
                             </tr>
                              <tr>
-                                <td>Avg. Test Time (sec)</td>
+                                <td><span class="label label-default">Avg. Test Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgTestTime | setDecimal:2}}</td>
                             </tr>
                              <tr>
-                                <td>Transactions/Sec</td>
+                                <td><span class="label label-default">Transactions/Sec</span></td>
                                 <td>{{loadTestResult.TransactionsPerSec | setDecimal:2}}</td>
                             </tr>
                             <tr>
-                                <td>Avg. Transaction Time (sec)</td>
+                                <td><span class="label label-default">Avg. Transaction Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgTransactionTime | setDecimal:2}}</td>
                             </tr>
                             
                              <tr>
-                                <td>Pages/Sec</td>
+                                <td><span class="label label-default">Pages/Sec</span></td>
                                 <td>{{loadTestResult.PagesPerSec | setDecimal:2}}</td>
                             </tr>
                              <tr>
-                                <td>Avg. Page Time (sec)</td>
+                                <td><span class="label label-default">Avg. Page Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgPageTime | setDecimal:2}}</td>
                             </tr>
                              <tr>
-                                <td>Requests/Sec</td>
+                                <td><span class="label label-default">Requests/Sec</span></td>
                                 <td>{{loadTestResult.PagesPerSec | setDecimal:2}}</td>
                             </tr>
                              <tr>
-                                <td>Requests Failed</td>
+                                <td><span class="label label-default">Requests Failed</span></td>
                                 <td>{{loadTestResult.RequestsFailed}}</td>
                             </tr>
                              <tr>
-                                <td>Avg. Response Time (sec)</td>
+                                <td><span class="label label-default">Avg. Response Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgResponseTime| setDecimal:2}}</td>
                             </tr>
                         </table>
@@ -166,7 +166,6 @@
                             <td class=" ">{{loadTestResult.SlowestTestTime | setDecimal:2}} </td>
                           </tr>
                    
-                       
                         </tbody>
                       </table>
                     </div>
@@ -240,7 +239,9 @@
                             <td class=" ">{{PageResult.AvgPageTime | setDecimal:2}}</td>
                             <td class=" ">{{PageResult.PageCount}}</td>
                           </tr>
-                   
+                         <tr class="even pointer" ng-show="!loadTestResult.PageResults.length">
+                              <td colspan="5" style="text-align:center">No Page Results to Show !</td>
+                          </tr>
                        
                         </tbody>
                       </table>
@@ -363,7 +364,7 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th class="column-title">Type </th>
+                            <th class="column-title bold">Type </th>
                             <th class="column-title">Subtype </th>
                             <th class="column-title">Count </th>
                             <th class="column-title">Last Message</th>
@@ -371,13 +372,15 @@
                         </thead>
 
                         <tbody> 
-                          <tr class="even pointer" ng-repeat="LoadTestError in loadTestResult.LoadTestErrors">
-                            <td class="">{{LoadTestError.ErrorType | MessageTypeFilter}}</td>
+                          <tr class="even pointer" ng-repeat="LoadTestError in loadTestResult.LoadTestErrors" data-toggle="tooltip" title="Click the count for deatiled error">
+                            <td class="critical">{{LoadTestError.ErrorType | MessageTypeFilter}}</td>
                             <td class=""> {{LoadTestError.ErrorSubtype}}</td>
                             <td class=""><a ng-href="#/LoadTest/ErrorDetails/LoadTestRunId/{{LoadTestError.LoadTestRunId}}/SubType/{{LoadTestError.ErrorSubtype}}">{{LoadTestError.ErrorCount}}</a></td>
                             <td class="">{{LoadTestError.ErrorLastMessage}}</td>
                           </tr>
-                   
+                          <tr class="even pointer" ng-show="!loadTestResult.LoadTestErrors.length">
+                              <td colspan="4" style="text-align:center">No Errors to Show !</td>
+                          </tr>
                        
                         </tbody>
                       </table>

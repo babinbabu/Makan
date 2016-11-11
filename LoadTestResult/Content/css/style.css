@@ -1,0 +1,40 @@
+﻿.critical:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        display: inline-block;
+        content: "";
+        margin-left: -1px;
+        background-color: #e23131;
+    }
+
+
+    .warnings:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        display: inline-block;
+        content: "";
+        margin-left: -1px;
+        background-color: #e28a31;
+    }
+
+    .ok:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        display: inline-block;
+        content: "";
+        margin-left: -1px;
+        background-color: #5cb85c;
+    }
+
+   table .ok,.critical,.warnings {
+        position: relative;
+    }

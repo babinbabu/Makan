@@ -18,6 +18,7 @@ namespace LoadTestResult.Models
         public string RunSettingUsed { get; set; }
         public bool IsLocalRun { get; set; }
         public string Outcome { get; set; }
+        public string OverallThresholdRuleResults { get; set; }
         public int NumberOfAgents { get; set; }
         public int MaxUserLoad { get; set; }
         public float TestsPerSec { get; set; }
@@ -39,10 +40,10 @@ namespace LoadTestResult.Models
         public SlowestTestsModel SlowestTest { get; set; }
         public LoadTestResultModels()
         {
-           
+
         }
 
-        public LoadTestResultModels(Entity.LoadTestRun entityLoadTestRun, Entity.db_LoadTest2010Entities db, bool compare=false)
+        public LoadTestResultModels(Entity.LoadTestRun entityLoadTestRun, Entity.db_LoadTest2010Entities db, bool compare = false)
         {
             RunId = entityLoadTestRun.RunId;
             LoadTestRunId = entityLoadTestRun.LoadTestRunId;
@@ -59,25 +60,25 @@ namespace LoadTestResult.Models
             SlowestTestName = db.LoadTestCases.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).TestCaseName;
             SlowestTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).OrderByDescending(e => e.Percentile95).Take(5).Sum(p => p.Percentile95);
             MaxUserLoad = db.LoadTestTestDetails.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Select(e => e.UserId).Distinct().Count();
-            
-            var entityLoadTestTestSummaryDatas = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId);
-            if (entityLoadTestTestSummaryDatas != null)
+
+            var entityLoadTestTestSummaryDatas = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).ToList();
+            if (entityLoadTestTestSummaryDatas.Count > 0)
             {
-                TestsPerSec = (float)entityLoadTestTestSummaryDatas.Sum(x=>x.TestsRun) / entityLoadTestRun.RunDuration;
+                TestsPerSec = (float)entityLoadTestTestSummaryDatas.Sum(x => x.TestsRun) / entityLoadTestRun.RunDuration;
             }
 
             TestsFailed = entityLoadTestRun.LoadTestMessages.Where(x => x.MessageType == 2).Count();
-            AvgTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Sum(x=>x.Average);
-            PagesPerSec =(double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.PageCount) / entityLoadTestRun.RunDuration;
+            AvgTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Sum(x => x.Average);
+            PagesPerSec = (double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.PageCount) / entityLoadTestRun.RunDuration;
             AvgPageTime = (double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.Average) / entityLoadTestRun.LoadTestPageSummaryDatas.Count();
             var entityLoadTestTransactionSummaryData = db.LoadTestTransactionSummaryDatas.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId);
             if (entityLoadTestTransactionSummaryData != null)
             {
-                TransactionsPerSec =(double)entityLoadTestTransactionSummaryData.TransactionCount / entityLoadTestRun.RunDuration;
+                TransactionsPerSec = (double)entityLoadTestTransactionSummaryData.TransactionCount / entityLoadTestRun.RunDuration;
                 AvgTransactionTime = entityLoadTestTransactionSummaryData.Average;
             }
 
-            RequestsFailed = entityLoadTestRun.LoadTestMessages.Select(x=>x.RequestId).Distinct().Count();
+            RequestsFailed = entityLoadTestRun.LoadTestMessages.Select(x => x.RequestId).Distinct().Count();
             AvgResponseTime = db.LoadTestPageDetails.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Average(x => x.ResponseTime);
             //TotalTests = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Sum(x => x.TestsRun);
             if (compare)
@@ -115,7 +116,7 @@ namespace LoadTestResult.Models
                     }
                 }
                 TestResults = new List<TestResultsModels>();
-                
+
                 if (entityLoadTestTestSummaryDatas != null)
                 {
                     foreach (var entityLoadTestTestSummaryData in entityLoadTestTestSummaryDatas)
@@ -129,7 +130,6 @@ namespace LoadTestResult.Models
     }
     public class LoadTestResultList : LoadTestResultModels
     {
-        
 
         public LoadTestResultList()
         {
@@ -138,7 +138,7 @@ namespace LoadTestResult.Models
 
         public LoadTestResultList(Entity.LoadTestRun entityLoadTestRun)
         {
-           
+
             LoadTestName = entityLoadTestRun.LoadTestName;
             LoadTestRunId = entityLoadTestRun.LoadTestRunId;
             RunId = entityLoadTestRun.RunId;
@@ -150,6 +150,23 @@ namespace LoadTestResult.Models
             RunSettingUsed = entityLoadTestRun.RunSettingUsed;
             IsLocalRun = entityLoadTestRun.IsLocalRun;
             Outcome = entityLoadTestRun.Outcome;
+            bool OverallThresholdRuleResultStatus = true;
+            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.critical && x.LoadTestItemId!=null) && OverallThresholdRuleResultStatus)
+            {
+                OverallThresholdRuleResults = OverallThresholdRuleResult.critical.ToString();
+                OverallThresholdRuleResultStatus = false;
+            }
+            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.warnings && x.LoadTestItemId!=null) && OverallThresholdRuleResultStatus)
+            {
+                OverallThresholdRuleResults = OverallThresholdRuleResult.warnings.ToString();
+                OverallThresholdRuleResultStatus = false;
+            }
+            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.ok) && OverallThresholdRuleResultStatus)
+            {
+                OverallThresholdRuleResults = OverallThresholdRuleResult.ok.ToString();
+                OverallThresholdRuleResultStatus = false;
+            }
+
         }
     }
 
