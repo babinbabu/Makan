@@ -2,9 +2,9 @@
 app.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.when("/", {
-          templateUrl: "/Template/LoadTest/LoadTestResult.html",
-          controller: "LoadTestList",
-          activetab: 'loadlist'
+          templateUrl: "/Template/LoadTest/RunLoadTest.html",
+          controller: "RunLoadTest",
+          activetab: 'runLoadTest'
       })
      
       
@@ -12,6 +12,13 @@ app.config(['$routeProvider',
           templateUrl: "/Template/LoadTest/LoadTestResult.html",
           controller: "LoadTestList",
           activetab: 'loadlist'
+
+      })
+
+      $routeProvider.when("/RunLoadTest", {
+          templateUrl: "/Template/LoadTest/RunLoadTest.html",
+          controller: "RunLoadTest",
+          activetab: 'runLoadTest'
 
       })
 
@@ -107,5 +114,13 @@ app.filter("ControllerFilter", function ($filter) {
         }
         return "Remote Run";
     };
+});
+app.filter('capitalize', function ($filter) {
+    return function (input) {
+        if (input != null) {
+            input = input.toLowerCase();
+            return input.substring(0, 1).toUpperCase() + input.substring(1);
+        }
+    }
 });
 

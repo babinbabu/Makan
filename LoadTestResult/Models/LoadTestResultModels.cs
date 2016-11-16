@@ -67,7 +67,7 @@ namespace LoadTestResult.Models
                 TestsPerSec = (float)entityLoadTestTestSummaryDatas.Sum(x => x.TestsRun) / entityLoadTestRun.RunDuration;
             }
 
-            TestsFailed = entityLoadTestRun.LoadTestMessages.Where(x => x.MessageType == 2).Count();
+            TestsFailed = entityLoadTestRun.LoadTestTestLogs.Count();
             AvgTestTime = db.LoadTestTestSummaryDatas.Where(x => x.LoadTestRunId == entityLoadTestRun.LoadTestRunId).Sum(x => x.Average);
             PagesPerSec = (double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.PageCount) / entityLoadTestRun.RunDuration;
             AvgPageTime = (double)entityLoadTestRun.LoadTestPageSummaryDatas.Sum(x => x.Average) / entityLoadTestRun.LoadTestPageSummaryDatas.Count();
@@ -143,29 +143,13 @@ namespace LoadTestResult.Models
             LoadTestRunId = entityLoadTestRun.LoadTestRunId;
             RunId = entityLoadTestRun.RunId;
             Description = entityLoadTestRun.Description;
-            StartTime = entityLoadTestRun.StartTime;
-            EndTime = entityLoadTestRun.EndTime;
+            StartTime = entityLoadTestRun.StartTime.Value.AddHours(Constants.Malaysia_Time_Zone);
+            EndTime = entityLoadTestRun.EndTime.Value.AddHours(Constants.Malaysia_Time_Zone);
             RunDuration = entityLoadTestRun.RunDuration;
             WarmupTime = entityLoadTestRun.WarmupTime;
             RunSettingUsed = entityLoadTestRun.RunSettingUsed;
             IsLocalRun = entityLoadTestRun.IsLocalRun;
             Outcome = entityLoadTestRun.Outcome;
-            bool OverallThresholdRuleResultStatus = true;
-            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.critical && x.LoadTestItemId!=null) && OverallThresholdRuleResultStatus)
-            {
-                OverallThresholdRuleResults = OverallThresholdRuleResult.critical.ToString();
-                OverallThresholdRuleResultStatus = false;
-            }
-            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.warnings && x.LoadTestItemId!=null) && OverallThresholdRuleResultStatus)
-            {
-                OverallThresholdRuleResults = OverallThresholdRuleResult.warnings.ToString();
-                OverallThresholdRuleResultStatus = false;
-            }
-            if (entityLoadTestRun.LoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == (byte?)OverallThresholdRuleResult.ok) && OverallThresholdRuleResultStatus)
-            {
-                OverallThresholdRuleResults = OverallThresholdRuleResult.ok.ToString();
-                OverallThresholdRuleResultStatus = false;
-            }
 
         }
     }

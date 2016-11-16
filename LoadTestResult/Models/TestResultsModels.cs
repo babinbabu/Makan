@@ -21,9 +21,9 @@ namespace LoadTestResult.Models
         {
             Name = db.LoadTestCases.FirstOrDefault(x => x.TestCaseId == entityLoadTestTestSummaryData.TestCaseId && x.LoadTestRunId == entityLoadTestTestSummaryData.LoadTestRunId).TestCaseName;
             Scenario = db.LoadTestScenarios.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestTestSummaryData.LoadTestRunId).ScenarioName;
-            TotalTests = entityLoadTestTestSummaryData.TestsRun;          
-            int failedTests=db.LoadTestMessages.Where(x=>x.LoadTestRunId==entityLoadTestTestSummaryData.LoadTestRunId && x.MessageType==2 && x.TestCaseId==entityLoadTestTestSummaryData.TestCaseId).Count();
-            FailedTests = string.Format("{0} ({1})", failedTests, failedTests * 100 / TotalTests);
+            TotalTests = entityLoadTestTestSummaryData.TestsRun;
+            int failedTests = db.LoadTestTestLogs.Where(x => x.LoadTestRunId == entityLoadTestTestSummaryData.LoadTestRunId && x.TestCaseId == entityLoadTestTestSummaryData.TestCaseId).Count();
+            FailedTests = string.Format("{0} ({1})", failedTests, Math.Round((float)failedTests * 100 / TotalTests,2));
             AvgTestTime = entityLoadTestTestSummaryData.Average;
         }
 

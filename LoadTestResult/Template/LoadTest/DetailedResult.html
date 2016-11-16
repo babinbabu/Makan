@@ -1,5 +1,4 @@
-﻿
-<div class="row">
+﻿<div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
@@ -17,41 +16,41 @@
                         <table class="table table-bordered">
                             <tr>
                                 <td><span class="label label-default">Load Test Name</span></td>
-                                <td>{{loadTestResult.LoadTestName}}</td>
+                                <td>{{loadTestResult.LoadTestName | capitalize}}</td>
                             </tr>
                             <tr>
                                 <td><span class="label label-default">Description</span></td>
-                                <td>{{loadTestResult.Description}}</td>
+                                <td>{{loadTestResult.Description | capitalize}}</td>
                             </tr>
                             <tr>
                                 <td><span class="label label-default">Start Time</span></td>
                                 <td>{{loadTestResult.StartTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">End Time</span></td>
                                 <td>{{loadTestResult.EndTime | mydate | date: 'yyyy-MM-dd HH:mm'}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Warm-up Duration</span></td>
                                 <td>{{loadTestResult.WarmupTime | secondsToTime}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Duration</span></td>
                                 <td>{{loadTestResult.RunDuration | secondsToTime}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Controller</span></td>
                                 <td>{{loadTestResult.IsLocalRun | ControllerFilter}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Number of Agents</span></td>
                                 <td>{{loadTestResult.NumberOfAgents}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Run Settings Used</span></td>
                                 <td>{{loadTestResult.RunSettingUsed}}</td>
                             </tr>
-                            
+
                         </table>
                     </div>
                 </div>
@@ -63,27 +62,28 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th class="column-title">URL (Link to More Details) </th>
-                            <th class="column-title">95% Page Time (sec) </th>
-                          </tr>
-                        </thead>
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">URL (Link to More Details) </th>
+                                        <th class="column-title">95% Page Time (sec) </th>
+                                    </tr>
+                                </thead>
 
-                        <tbody> 
-                          <tr class="even pointer" ng-repeat="SlowestPage in loadTestResult.SlowestPages">
-                            <td class=" ">{{SlowestPage.URL}}</td>
-                            <td class=" ">{{SlowestPage.PageTime | setDecimal:2}} </td>
-                            </td>
-                          </tr>
-                   
-                       
-                        </tbody>
-                      </table>
+                                <tbody>
+                                    <tr class="even pointer" ng-repeat="SlowestPage in loadTestResult.SlowestPages">
+                                        <td class=" ">{{SlowestPage.URL}}</td>
+                                        <td class=" ">{{SlowestPage.PageTime | setDecimal:2}} </td>
+                                        </td>
+                         
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -107,11 +107,11 @@
                                 <td><span class="label label-default">Tests Failed</span></td>
                                 <td>{{loadTestResult.TestsFailed}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Avg. Test Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgTestTime | setDecimal:2}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Transactions/Sec</span></td>
                                 <td>{{loadTestResult.TransactionsPerSec | setDecimal:2}}</td>
                             </tr>
@@ -119,24 +119,24 @@
                                 <td><span class="label label-default">Avg. Transaction Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgTransactionTime | setDecimal:2}}</td>
                             </tr>
-                            
-                             <tr>
+
+                            <tr>
                                 <td><span class="label label-default">Pages/Sec</span></td>
                                 <td>{{loadTestResult.PagesPerSec | setDecimal:2}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Avg. Page Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgPageTime | setDecimal:2}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Requests/Sec</span></td>
                                 <td>{{loadTestResult.PagesPerSec | setDecimal:2}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Requests Failed</span></td>
                                 <td>{{loadTestResult.RequestsFailed}}</td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td><span class="label label-default">Avg. Response Time (sec)</span></td>
                                 <td>{{loadTestResult.AvgResponseTime| setDecimal:2}}</td>
                             </tr>
@@ -150,26 +150,26 @@
                         <h2>Key Statistic: Top 5 Slowest Tests</h2>
                         <div class="clearfix"></div>
                     </div>
-                     <div class="x_content">
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th class="column-title">Name </th>
-                            <th class="column-title">95% Test Time (sec) </th>
-                          </tr>
-                        </thead>
+                    <div class="x_content">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">Name </th>
+                                        <th class="column-title">95% Test Time (sec) </th>
+                                    </tr>
+                                </thead>
 
-                        <tbody> 
-                          <tr class="even pointer">
-                            <td class=" ">{{loadTestResult.SlowestTestName}}</td>
-                            <td class=" ">{{loadTestResult.SlowestTestTime | setDecimal:2}} </td>
-                          </tr>
-                   
-                        </tbody>
-                      </table>
+                                <tbody>
+                                    <tr class="even pointer">
+                                        <td class=" ">{{loadTestResult.SlowestTestName | capitalize}}</td>
+                                        <td class=" ">{{loadTestResult.SlowestTestTime | setDecimal:2}} </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                  </div>
 
                 </div>
             </div>
@@ -184,28 +184,28 @@
                     </div>
                     <div class="x_content">
                         <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th class="column-title">Name </th>
-                            <th class="column-title">Scenario </th>
-                            <th class="column-title">Total Tests </th>
-                            <th class="column-title">Failed Tests (% of total) </th>
-                            <th class="column-title">Avg. Test Time (sec) </th>
-                          </tr>
-                        </thead>
+                            <thead>
+                                <tr class="headings">
+                                    <th class="column-title">Name </th>
+                                    <th class="column-title">Scenario </th>
+                                    <th class="column-title">Total Tests </th>
+                                    <th class="column-title">Failed Tests (% of total) </th>
+                                    <th class="column-title">Avg. Test Time (sec) </th>
+                                </tr>
+                            </thead>
 
-                        <tbody> 
-                          <tr class="even pointer" ng-repeat="TestResult in loadTestResult.TestResults">
-                            <td class=" ">{{TestResult.Name}}</td>
-                            <td class=" ">{{TestResult.Scenario}}</td>
-                            <td class=" ">{{TestResult.TotalTests}}</td>
-                            <td class=" ">{{TestResult.FailedTests}}</td>
-                            <td class=" ">{{TestResult.AvgTestTime | setDecimal:2}}</td>
-                          </tr>
-                   
-                       
-                        </tbody>
-                      </table>
+                            <tbody>
+                                <tr class="even pointer" ng-repeat="TestResult in loadTestResult.TestResults">
+                                    <td class=" ">{{TestResult.Name | capitalize}}</td>
+                                    <td class=" ">{{TestResult.Scenario | capitalize}}</td>
+                                    <td class=" ">{{TestResult.TotalTests}}</td>
+                                    <td class=" ">{{TestResult.FailedTests}}</td>
+                                    <td class=" ">{{TestResult.AvgTestTime | setDecimal:2}}</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -218,35 +218,37 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                         <div class="x_content">
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th class="column-title">URL (Link to More Details) </th>
-                            <th class="column-title">Scenario </th>
-                            <th class="column-title">Test </th>
-                            <th class="column-title">Avg. Page Time (sec) </th>
-                            <th class="column-title">Count </th>
-                          </tr>
-                        </thead>
+                        <div class="x_content">
+                            <div class="table-responsive">
+                                <table class="table table-striped jambo_table bulk_action">
+                                    <thead>
+                                        <tr class="headings">
+                                            <th class="column-title">URL (Link to More Details) </th>
+                                            <th class="column-title">Scenario </th>
+                                            <th class="column-title">Test </th>
+                                            <th class="column-title">Avg. Page Time (sec) </th>
+                                            <th class="column-title">Count </th>
+                                            <th class="column-title">Status </th>
+                                        </tr>
+                                    </thead>
 
-                        <tbody> 
-                          <tr class="even pointer" ng-repeat="PageResult in loadTestResult.PageResults">
-                            <td class=" ">{{PageResult.URL}}</td>
-                            <td class=" "> {{PageResult.Scenario}}</td>
-                            <td class=" ">{{PageResult.TestName}}</td>
-                            <td class=" ">{{PageResult.AvgPageTime | setDecimal:2}}</td>
-                            <td class=" ">{{PageResult.PageCount}}</td>
-                          </tr>
-                         <tr class="even pointer" ng-show="!loadTestResult.PageResults.length">
-                              <td colspan="5" style="text-align:center">No Page Results to Show !</td>
-                          </tr>
-                       
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                                    <tbody>
+                                        <tr class="even pointer" ng-repeat="PageResult in loadTestResult.PageResults">
+                                            <td class="{{PageResult.ThresholdRuleResult}}">{{PageResult.URL}}</td>
+                                            <td class=" ">{{PageResult.Scenario | capitalize}}</td>
+                                            <td class=" ">{{PageResult.TestName | capitalize}}</td>
+                                            <td class=" ">{{PageResult.AvgPageTime | setDecimal:2}}</td>
+                                            <td class=" ">{{PageResult.PageCount}}</td>
+                                            <td class=" ">{{PageResult.ThresholdRuleResult | capitalize}}</td>
+                                        </tr>
+                                        <tr class="even pointer" ng-show="!loadTestResult.PageResults.length">
+                                            <td colspan="5" style="text-align: center">No Page Results to Show !</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -318,7 +320,7 @@
                     </div>
                 </div>
             </div>-->
-           <!-- <div class="clearfix"></div>-->
+            <!-- <div class="clearfix"></div>-->
             <!--<div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
@@ -352,7 +354,7 @@
                     </div>
                 </div>
             </div>-->
-  <!--          <div class="clearfix"></div>-->
+            <!--          <div class="clearfix"></div>-->
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
@@ -361,30 +363,30 @@
                     </div>
                     <div class="x_content">
                         <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th class="column-title bold">Type </th>
-                            <th class="column-title">Subtype </th>
-                            <th class="column-title">Count </th>
-                            <th class="column-title">Last Message</th>
-                          </tr>
-                        </thead>
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title bold">Type </th>
+                                        <th class="column-title">Subtype </th>
+                                        <th class="column-title">Count </th>
+                                        <th class="column-title">Last Message</th>
+                                    </tr>
+                                </thead>
 
-                        <tbody> 
-                          <tr class="even pointer" ng-repeat="LoadTestError in loadTestResult.LoadTestErrors" data-toggle="tooltip" title="Click the count for deatiled error">
-                            <td class="critical">{{LoadTestError.ErrorType | MessageTypeFilter}}</td>
-                            <td class=""> {{LoadTestError.ErrorSubtype}}</td>
-                            <td class=""><a ng-href="#/LoadTest/ErrorDetails/LoadTestRunId/{{LoadTestError.LoadTestRunId}}/SubType/{{LoadTestError.ErrorSubtype}}">{{LoadTestError.ErrorCount}}</a></td>
-                            <td class="">{{LoadTestError.ErrorLastMessage}}</td>
-                          </tr>
-                          <tr class="even pointer" ng-show="!loadTestResult.LoadTestErrors.length">
-                              <td colspan="4" style="text-align:center">No Errors to Show !</td>
-                          </tr>
-                       
-                        </tbody>
-                      </table>
-                    </div>
+                                <tbody>
+                                    <tr class="even pointer" ng-repeat="LoadTestError in loadTestResult.LoadTestErrors" data-toggle="tooltip" title="Click the count for deatiled error">
+                                        <td class="critical">{{LoadTestError.ErrorType | MessageTypeFilter}}</td>
+                                        <td class="">{{LoadTestError.ErrorSubtype}}</td>
+                                        <td class=""><a ng-href="#/LoadTest/ErrorDetails/LoadTestRunId/{{LoadTestError.LoadTestRunId}}/SubType/{{LoadTestError.ErrorSubtype}}">{{LoadTestError.ErrorCount}}</a></td>
+                                        <td class="">{{LoadTestError.ErrorLastMessage}}</td>
+                                    </tr>
+                                    <tr class="even pointer" ng-show="!loadTestResult.LoadTestErrors.length">
+                                        <td colspan="4" style="text-align: center">No Errors to Show !</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

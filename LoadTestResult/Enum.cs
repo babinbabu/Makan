@@ -20,4 +20,11 @@ namespace LoadTestResult
         warnings = 1,
         ok = 0
     }
+    public enum LoadTestRunOutcome : byte
+    {
+        InProgress=1,
+        Completed=2,
+        Aborted=3,
+        Error=4
+    }
 }

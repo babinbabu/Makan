@@ -80,7 +80,7 @@
 
                 <tbody>
                     <tr class="even pointer" ng-repeat="LoadTest in LoadTestList.data">
-                        <td class="{{LoadTest.OverallThresholdRuleResults}}">
+                        <td ng-class="{'ok':LoadTest.Outcome=='Completed','warnings':LoadTest.Outcome=='Aborted','critical':LoadTest.Outcome=='Error'}">
                             <input type="checkbox" ng-model="LoadTest.Compare" value="{{LoadTest.LoadTestRunId}}" ng-if="LoadTest.Outcome == 'Completed'" class="flat" /></td>
                         <td class=" ">{{LoadTest.LoadTestName}}</td>
                         <td class=" ">{{LoadTest.StartTime | mydate | date: 'yyyy-MM-dd HH:mm'}} </td>

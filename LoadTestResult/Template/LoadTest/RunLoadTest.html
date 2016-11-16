@@ -1,0 +1,45 @@
+﻿<style>
+    .container-table {
+        display: table;
+    }
+
+    .vertical-center-row {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .styled-select.slate {
+        background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+        height: 34px;
+        width: 240px;
+    }
+
+        .styled-select.slate select {
+            border: 1px solid #ccc;
+            font-size: 16px;
+            height: 34px;
+            width: 268px;
+        }
+
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+    }
+
+</style>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="container container-table">
+        <div class="row vertical-center-row">
+            <div class="text-center col-md-4 col-md-offset-4">
+                <div class="styled-select slate">
+                    <select ng-change="change()" ng-model="CurrentLoadTestName">
+                        <option value="" selected disabled="disabled">Please select the Load Test</option>
+                        <option value="{{LoadTestName.LoadTestName}}" ng-repeat="(i,LoadTestName) in LoadTestNames">{{LoadTestName.LoadTestName}} </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

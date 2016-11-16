@@ -12,6 +12,7 @@ namespace LoadTestResult.Models
         public string TestName { get; set; }
         public double AvgPageTime { get; set; }
         public int PageCount { get; set; }
+        public string ThresholdRuleResult { get; set; }
 
         public PageResultsModels()
         {
@@ -28,6 +29,23 @@ namespace LoadTestResult.Models
             AvgPageTime = entityLoadTestPageSummaryData.Average;
             Scenario = db.LoadTestScenarios.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestPageSummaryData.LoadTestRunId).ScenarioName;
             TestName = db.LoadTestCases.FirstOrDefault(x => x.LoadTestRunId == entityLoadTestPageSummaryData.LoadTestRunId).TestCaseName;
+            var entityLoadTestPerformanceCounterInstances = db.LoadTestPerformanceCounterInstances.Where(x => x.LoadTestRunId == entityLoadTestPageSummaryData.LoadTestRunId && x.LoadTestItemId == entityLoadTestPageSummaryData.PageId);
+            bool overallThresholdRuleResultStatus = true;
+            if (entityLoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == 2) && overallThresholdRuleResultStatus)
+            {
+                ThresholdRuleResult = OverallThresholdRuleResult.critical.ToString();
+                overallThresholdRuleResultStatus = false;
+            }
+            else if (entityLoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == 1) && overallThresholdRuleResultStatus)
+            {
+                ThresholdRuleResult = OverallThresholdRuleResult.warnings.ToString();
+                overallThresholdRuleResultStatus = false;
+            }
+            else
+            {
+                ThresholdRuleResult = OverallThresholdRuleResult.ok.ToString();
+            }
+
         }
 
     }
