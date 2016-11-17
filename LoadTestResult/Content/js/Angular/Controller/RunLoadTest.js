@@ -2,7 +2,7 @@
     GetLoadTestNameList();
     function GetLoadTestNameList() {
         $.blockUI({ message: null });
-        $http.get("/RunLoadTest/GetLoadTestNames")
+        $http.get("/RunLoadTest/GetLoadTestNames", {cache: false})
            .then(function (response) {
                $scope.LoadTestNames = response.data;
                $.unblockUI();
@@ -10,12 +10,11 @@
     }
 
     $scope.submit = function () {
-        console.log($scope.CurrentLoadTestName);
         ExecuteLoadTest();
     }
     function ExecuteLoadTest() {
         $.blockUI({ message: $('#domMessage') });
-        $http.post("/RunLoadTest/ExecuteLoadTest", { "loadTestPath": $scope.CurrentLoadTestName })
+        $http.post("/RunLoadTest/ExecuteLoadTest", { "loadTestPath": $scope.CurrentLoadTestName, cache: false })
            .then(function (response) {
                $.unblockUI();
                if (response.data == 'True') {
@@ -27,3 +26,15 @@
            });
     }
 });
+
+window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'Any string';
+    }
+
+    // For Safari
+    return 'Any string';
+};

@@ -1,25 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<TestRun id="974edad9-ac68-4dc4-9244-a57b622e35ba" name="Babin@AGMO-PC 2016-11-16 18:39:06" runUser="AGMO-PC\Babin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <TestSettings name="Default Test Settings" id="a029823f-874b-49a9-8e3b-53548bdd0f6e">
-    <Deployment userDeploymentRoot="D:\project\LoadTestResult\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Babin_AGMO-PC 2016-11-16 18_39_06" />
+<TestRun id="660f31fc-8cc5-4e88-8710-55b6466c6a08" name="Babin@AGMO-PC 2016-11-17 16:52:52" runUser="AGMO-PC\Babin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="012b21be-1eaf-443e-b6c7-263cae9839e3">
+    <Deployment userDeploymentRoot="D:\project\LoadTestResult\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Babin_AGMO-PC 2016-11-17 16_52_52" />
     <Execution>
       <TestTypeSpecific />
       <AgentRule name="Execution Agents">
       </AgentRule>
     </Execution>
   </TestSettings>
-  <Times creation="2016-11-16T18:39:06.4761718+08:00" queuing="2016-11-16T18:39:06.7103198+08:00" start="2016-11-16T18:39:06.9935208+08:00" finish="2016-11-16T18:40:08.4608465+08:00" />
+  <Times creation="2016-11-17T16:52:52.4122888+08:00" queuing="2016-11-17T16:52:52.7094852+08:00" start="2016-11-17T16:52:53.0016911+08:00" finish="2016-11-17T16:56:55.7252455+08:00" />
   <ResultSummary outcome="Completed">
     <Counters total="1" executed="1" passed="0" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="1" inProgress="0" pending="0" />
   </ResultSummary>
   <TestDefinitions>
-    <WebTest name="Login" storage="d:\project\loadtestresult\runloadtest.loadtest\login.webtest" id="e7fbb852-f877-4c0b-974a-def05fd51f50" persistedWebTest="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pg0KPFdlYlRlc3QgTmFtZT0iTG9naW4iIElkPSJlN2ZiYjg1Mi1mODc3LTRjMGItOTc0YS1kZWYwNWZkNTFmNTAiIE93bmVyPSIiIFByaW9yaXR5PSIyMTQ3NDgzNjQ3IiBFbmFibGVkPSJUcnVlIiBDc3NQcm9qZWN0U3RydWN0dXJlPSIiIENzc0l0ZXJhdGlvbj0iIiBUaW1lb3V0PSIwIiBXb3JrSXRlbUlkcz0iIiB4bWxucz0iaHR0cDovL21pY3Jvc29mdC5jb20vc2NoZW1hcy9WaXN1YWxTdHVkaW8vVGVhbVRlc3QvMjAxMCIgRGVzY3JpcHRpb249IiIgQ3JlZGVudGlhbFVzZXJOYW1lPSIiIENyZWRlbnRpYWxQYXNzd29yZD0iIiBQcmVBdXRoZW50aWNhdGU9IlRydWUiIFByb3h5PSJkZWZhdWx0IiBTdG9wT25FcnJvcj0iRmFsc2UiIFJlY29yZGVkUmVzdWx0RmlsZT0iIiBSZXN1bHRzTG9jYWxlPSIiPg0KICA8SXRlbXM+DQogICAgPFJlcXVlc3QgTWV0aG9kPSJQT1NUIiBHdWlkPSI0NjVlY2ZjNy1iMzBhLTQ4YTctYjEzNS0yODI5YmM1ZDNhZDkiIFZlcnNpb249IjEuMSIgVXJsPSJ7e3VybH19L2FwaS9Db3JlL3YyMDAvYXBwVXNlci9Mb2dpbj9hcHBLZXk9e3thcHBLZXl9fSIgVGhpbmtUaW1lPSIwIiBUaW1lb3V0PSIzMDAiIFBhcnNlRGVwZW5kZW50UmVxdWVzdHM9IlRydWUiIEZvbGxvd1JlZGlyZWN0cz0iVHJ1ZSIgUmVjb3JkUmVzdWx0PSJUcnVlIiBDYWNoZT0iRmFsc2UiIFJlc3BvbnNlVGltZUdvYWw9IjAiIEVuY29kaW5nPSJ1dGYtOCIgRXhwZWN0ZWRIdHRwU3RhdHVzQ29kZT0iMCIgRXhwZWN0ZWRSZXNwb25zZVVybD0iIiBSZXBvcnRpbmdOYW1lPSIiIElnbm9yZUh0dHBTdGF0dXNDb2RlPSJGYWxzZSI+DQogICAgICA8U3RyaW5nSHR0cEJvZHkgQ29udGVudFR5cGU9InRleHQvanNvbiIgSW5zZXJ0Qnl0ZU9yZGVyTWFyaz0iRmFsc2UiPmV3QUtBQ0FBRFFBS0FDQUFJZ0JFQUdVQWRnQnBBR01BWlFCSkFHUUFJZ0E2QUNJQVlnQTFBR01BT0FCa0FEZ0FaUUExQURRQU9BQTNBR01BWVFBeEFEWUFJZ0FzQUFvQUlBQU5BQW9BSUFBaUFFUUFaUUIyQUdrQVl3QmxBRlFBZVFCd0FHVUFJZ0E2QURFQUxBQUtBQ0FBSUFBTkFBb0FJZ0JGQUcwQVlRQnBBR3dBSWdBNkFDSUFkQUJvQUdFQWJRQXhBRUFBWVFCbkFHMEFid0J6QUhRQWRRQmtBR2tBYndBdUFHTUFid0J0QUNJQUxBQUtBQ0FBRFFBS0FDQUFJZ0JRQUdFQWN3QnpBSGNBYndCeUFHUUFJZ0E2QUNJQU1RQXlBRE1BTkFBMUFEWUFJZ0FOQUFvQWZRQT08L1N0cmluZ0h0dHBCb2R5Pg0KICAgIDwvUmVxdWVzdD4NCiAgPC9JdGVtcz4NCiAgPENvbnRleHRQYXJhbWV0ZXJzPg0KICAgIDxDb250ZXh0UGFyYW1ldGVyIE5hbWU9InVybCIgVmFsdWU9Imh0dHA6Ly9qaXhpdWFwcC1zdGFnaW5nLmNsb3VkYXBwLm5ldCIgLz4NCiAgICA8Q29udGV4dFBhcmFtZXRlciBOYW1lPSJhcHBLZXkiIFZhbHVlPSJ1YkZkOWxRcGhOWGh1aS1iTVk1c3ljR3RiMVNnTDN5WXlINHBlTmowUHJISG5yWmhUWkxvR0cwMlFkWHBnLXZzSVl2b0tBME9tQV83TUtpdjhiaG1qQSIgLz4NCiAgPC9Db250ZXh0UGFyYW1ldGVycz4NCjwvV2ViVGVzdD4=">
-    </WebTest>
-    <LoadTest Name="Login" Description="" Owner="" storage="d:\project\loadtestresult\runloadtest.loadtest\login.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" Id="7d374212-01f7-4eda-befb-b681caf56803">
+    <LoadTest Name="LoadTest1" Description="" Owner="" storage="d:\project\loadtestresult\runloadtest.loadtest\loadtest1.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" Id="2bbcdbf1-6ef4-4209-9bad-e774784487dd">
       <Scenarios>
-        <Scenario Name="Login" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="true" TestMixType="Sequential" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
+        <Scenario Name="Scenario1" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="true" TestMixType="Sequential" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
           <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
-          <LoadProfile Pattern="Constant" InitialUsers="5" />
+          <LoadProfile Pattern="Constant" InitialUsers="2" />
           <TestMix>
             <TestProfile Name="Login" Path="d:\project\loadtestresult\runloadtest.loadtest\login.webtest" Id="e7fbb852-f877-4c0b-974a-def05fd51f50" Percentage="0" Type="Microsoft.VisualStudio.TestTools.WebStress.DeclarativeWebTestElement, Microsoft.VisualStudio.QualityTools.LoadTest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
           </TestMix>
@@ -470,7 +468,7 @@
         </CounterSet>
       </CounterSets>
       <RunConfigurations>
-        <RunConfiguration Name="Run Settings1" Description="" ResultsStoreType="Database" TimingDetailsStorage="AllIndividualDetails" SaveTestLogsOnError="true" SaveTestLogsFrequency="0" MaxErrorDetails="200" MaxErrorsPerType="1000" MaxThresholdViolations="1000" MaxRequestUrlsReported="1000" UseTestIterations="false" RunDuration="60" WarmupTime="0" CoolDownTime="0" TestIterations="100" WebTestConnectionModel="ConnectionPerUser" WebTestConnectionPoolSize="50" SampleRate="5" ValidationLevel="High" SqlTracingConnectString="" SqlTracingConnectStringDisplayValue="" SqlTracingDirectory="" SqlTracingEnabled="false" SqlTracingFileCount="2" SqlTracingRolloverEnabled="true" SqlTracingMinimumDuration="500" RunUnitTestsInAppDomain="true" RigType="Small">
+        <RunConfiguration Name="Run Settings1" Description="" ResultsStoreType="Database" TimingDetailsStorage="AllIndividualDetails" SaveTestLogsOnError="true" SaveTestLogsFrequency="0" MaxErrorDetails="200" MaxErrorsPerType="1000" MaxThresholdViolations="1000" MaxRequestUrlsReported="1000" UseTestIterations="false" RunDuration="240" WarmupTime="0" CoolDownTime="0" TestIterations="100" WebTestConnectionModel="ConnectionPerUser" WebTestConnectionPoolSize="50" SampleRate="5" ValidationLevel="High" SqlTracingConnectString="" SqlTracingConnectStringDisplayValue="" SqlTracingDirectory="" SqlTracingEnabled="false" SqlTracingFileCount="2" SqlTracingRolloverEnabled="true" SqlTracingMinimumDuration="500" RunUnitTestsInAppDomain="true" RigType="Small">
           <CounterSetMappings>
             <CounterSetMapping ComputerName="[CONTROLLER MACHINE]">
               <CounterSetReferences>
@@ -487,48 +485,50 @@
         </RunConfiguration>
       </RunConfigurations>
     </LoadTest>
+    <WebTest name="Login" storage="d:\project\loadtestresult\runloadtest.loadtest\login.webtest" id="e7fbb852-f877-4c0b-974a-def05fd51f50" persistedWebTest="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pg0KPFdlYlRlc3QgTmFtZT0iTG9naW4iIElkPSJlN2ZiYjg1Mi1mODc3LTRjMGItOTc0YS1kZWYwNWZkNTFmNTAiIE93bmVyPSIiIFByaW9yaXR5PSIyMTQ3NDgzNjQ3IiBFbmFibGVkPSJUcnVlIiBDc3NQcm9qZWN0U3RydWN0dXJlPSIiIENzc0l0ZXJhdGlvbj0iIiBUaW1lb3V0PSIwIiBXb3JrSXRlbUlkcz0iIiB4bWxucz0iaHR0cDovL21pY3Jvc29mdC5jb20vc2NoZW1hcy9WaXN1YWxTdHVkaW8vVGVhbVRlc3QvMjAxMCIgRGVzY3JpcHRpb249IiIgQ3JlZGVudGlhbFVzZXJOYW1lPSIiIENyZWRlbnRpYWxQYXNzd29yZD0iIiBQcmVBdXRoZW50aWNhdGU9IlRydWUiIFByb3h5PSJkZWZhdWx0IiBTdG9wT25FcnJvcj0iRmFsc2UiIFJlY29yZGVkUmVzdWx0RmlsZT0iIiBSZXN1bHRzTG9jYWxlPSIiPg0KICA8SXRlbXM+DQogICAgPFJlcXVlc3QgTWV0aG9kPSJQT1NUIiBHdWlkPSI0NjVlY2ZjNy1iMzBhLTQ4YTctYjEzNS0yODI5YmM1ZDNhZDkiIFZlcnNpb249IjEuMSIgVXJsPSJ7e3VybH19L2FwaS9Db3JlL3YyMDAvYXBwVXNlci9Mb2dpbj9hcHBLZXk9e3thcHBLZXl9fSIgVGhpbmtUaW1lPSIwIiBUaW1lb3V0PSIzMDAiIFBhcnNlRGVwZW5kZW50UmVxdWVzdHM9IlRydWUiIEZvbGxvd1JlZGlyZWN0cz0iVHJ1ZSIgUmVjb3JkUmVzdWx0PSJUcnVlIiBDYWNoZT0iRmFsc2UiIFJlc3BvbnNlVGltZUdvYWw9IjAiIEVuY29kaW5nPSJ1dGYtOCIgRXhwZWN0ZWRIdHRwU3RhdHVzQ29kZT0iMCIgRXhwZWN0ZWRSZXNwb25zZVVybD0iIiBSZXBvcnRpbmdOYW1lPSIiIElnbm9yZUh0dHBTdGF0dXNDb2RlPSJGYWxzZSI+DQogICAgICA8U3RyaW5nSHR0cEJvZHkgQ29udGVudFR5cGU9InRleHQvanNvbiIgSW5zZXJ0Qnl0ZU9yZGVyTWFyaz0iRmFsc2UiPmV3QUtBQ0FBRFFBS0FDQUFJZ0JFQUdVQWRnQnBBR01BWlFCSkFHUUFJZ0E2QUNJQVlnQTFBR01BT0FCa0FEZ0FaUUExQURRQU9BQTNBR01BWVFBeEFEWUFJZ0FzQUFvQUlBQU5BQW9BSUFBaUFFUUFaUUIyQUdrQVl3QmxBRlFBZVFCd0FHVUFJZ0E2QURFQUxBQUtBQ0FBSUFBTkFBb0FJZ0JGQUcwQVlRQnBBR3dBSWdBNkFDSUFkQUJvQUdFQWJRQXhBRUFBWVFCbkFHMEFid0J6QUhRQWRRQmtBR2tBYndBdUFHTUFid0J0QUNJQUxBQUtBQ0FBRFFBS0FDQUFJZ0JRQUdFQWN3QnpBSGNBYndCeUFHUUFJZ0E2QUNJQU1RQXlBRE1BTkFBMUFEWUFJZ0FOQUFvQWZRQT08L1N0cmluZ0h0dHBCb2R5Pg0KICAgIDwvUmVxdWVzdD4NCiAgPC9JdGVtcz4NCiAgPENvbnRleHRQYXJhbWV0ZXJzPg0KICAgIDxDb250ZXh0UGFyYW1ldGVyIE5hbWU9InVybCIgVmFsdWU9Imh0dHA6Ly9qaXhpdWFwcC1zdGFnaW5nLmNsb3VkYXBwLm5ldCIgLz4NCiAgICA8Q29udGV4dFBhcmFtZXRlciBOYW1lPSJhcHBLZXkiIFZhbHVlPSJ1YkZkOWxRcGhOWGh1aS1iTVk1c3ljR3RiMVNnTDN5WXlINHBlTmowUHJISG5yWmhUWkxvR0cwMlFkWHBnLXZzSVl2b0tBME9tQV83TUtpdjhiaG1qQSIgLz4NCiAgPC9Db250ZXh0UGFyYW1ldGVycz4NCjwvV2ViVGVzdD4=">
+    </WebTest>
   </TestDefinitions>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
     <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
   </TestLists>
   <TestEntries>
-    <TestEntry isTransparent="false" testId="7d374212-01f7-4eda-befb-b681caf56803" executionId="c832a34d-23b8-471d-971c-108906b937fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    <TestEntry isTransparent="false" testId="2bbcdbf1-6ef4-4209-9bad-e774784487dd" executionId="81fc35f5-377f-4112-ac10-e11a26b08460" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
       <TestEntries>
-        <TestEntry isTransparent="false" testId="e7fbb852-f877-4c0b-974a-def05fd51f50" executionId="ef071246-5fb8-496b-b1cf-0e57ce495edf" parentExecutionId="c832a34d-23b8-471d-971c-108906b937fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+        <TestEntry isTransparent="false" testId="e7fbb852-f877-4c0b-974a-def05fd51f50" executionId="c433876b-a3d3-4f5a-a2d0-9607629cf573" parentExecutionId="81fc35f5-377f-4112-ac10-e11a26b08460" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
       </TestEntries>
     </TestEntry>
   </TestEntries>
   <Results>
-    <LoadTestResult executionId="c832a34d-23b8-471d-971c-108906b937fb" testId="7d374212-01f7-4eda-befb-b681caf56803" testName="Login" computerName="AGMO-PC" duration="00:01:00" startTime="2016-11-16T18:39:07.8126734+08:00" endTime="2016-11-16T18:40:07.8126734+08:00" testType="fa4c85ff-1236-4463-b954-3ba2f0eabd95" outcome="Completed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c832a34d-23b8-471d-971c-108906b937fb" runId="5154" controllerStartTime="2016-11-16T18:39:07.8126734+08:00" runStatus="Stopped" resultsStoreType="Database" resultsRepositoryConnectString="LAs4ogoKlDfTCkZG6PklK8RIX9ypE/X0CoDbZRmh62/qKgcpN+wh855byHl9xHXnou0qmO6y1gNHKLzzd8CnC+Grz7TozBFsd8LIbpT6mFE=" loadTestDuration="60" loadTestWarmupTime="0" previouslyViewed="false">
+    <LoadTestResult executionId="81fc35f5-377f-4112-ac10-e11a26b08460" testId="2bbcdbf1-6ef4-4209-9bad-e774784487dd" testName="LoadTest1" computerName="AGMO-PC" duration="00:04:00" startTime="2016-11-17T16:52:53.7829930+08:00" endTime="2016-11-17T16:56:53.7829930+08:00" testType="fa4c85ff-1236-4463-b954-3ba2f0eabd95" outcome="Completed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81fc35f5-377f-4112-ac10-e11a26b08460" runId="5164" controllerStartTime="2016-11-17T16:52:53.7829930+08:00" runStatus="Stopped" resultsStoreType="Database" resultsRepositoryConnectString="LAs4ogoKlDfTCkZG6PklK8RIX9ypE/X0CoDbZRmh62/qKgcpN+wh855byHl9xHXnou0qmO6y1gNHKLzzd8CnC+Grz7TozBFsd8LIbpT6mFE=" loadTestDuration="240" loadTestWarmupTime="0" previouslyViewed="false">
       <Summary>
         <PerformanceCounterResults>
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Scenario" counterName="User Load" instanceName="_Total" value="5" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Total Tests" instanceName="_Total" value="625" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Scenario" counterName="User Load" instanceName="_Total" value="2" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Total Tests" instanceName="_Total" value="310" />
           <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Failed Tests" instanceName="_Total" value="0" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Tests/Sec" instanceName="_Total" value="10.416667" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Avg. Test Time" instanceName="_Total" value="0.433568" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Total Requests" instanceName="_Total" value="625" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Tests/Sec" instanceName="_Total" value="1.29166663" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Test" counterName="Avg. Test Time" instanceName="_Total" value="1.532829" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Total Requests" instanceName="_Total" value="310" />
           <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Failed Requests" instanceName="_Total" value="0" />
           <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Cached Requests" instanceName="_Total" value="0" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Requests/Sec" instanceName="_Total" value="10.416667" />
-          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Avg. Response Time" instanceName="_Total" value="0.4313648" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Processor" counterName="% Processor Time" instanceName="_Total" value="22.0884247" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="true" machineName="AGMO-PC" categoryName="Memory" counterName="Available MBytes" instanceName="-" value="1554" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="true" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Requests/Sec" instanceName="_Total" value="1.29166663" />
+          <PerformanceCounterResult isOverallResultCounter="true" higherIsBetter="false" machineName="AGMO-PC" categoryName="LoadTest:Request" counterName="Avg. Response Time" instanceName="_Total" value="1.529429" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Processor" counterName="% Processor Time" instanceName="_Total" value="14.9454546" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="true" machineName="AGMO-PC" categoryName="Memory" counterName="Available MBytes" instanceName="-" value="1430" />
           <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="realtek pcie gbe family controller" value="0" />
           <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="isatap.{ea385d04-e336-41fa-a547-221ebe736e2e}" value="0" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="teredo tunneling pseudo-interface" value="0" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="d-link dwa-131 wireless n nano usb adapter[rev.e]" value="44118.62" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="teredo tunneling pseudo-interface" value="17.2037716" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Received/sec" instanceName="d-link dwa-131 wireless n nano usb adapter[rev.e]" value="22257.4043" />
           <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="realtek pcie gbe family controller" value="0" />
           <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="isatap.{ea385d04-e336-41fa-a547-221ebe736e2e}" value="0" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="teredo tunneling pseudo-interface" value="11.7469845" />
-          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="d-link dwa-131 wireless n nano usb adapter[rev.e]" value="10247.1084" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="teredo tunneling pseudo-interface" value="27.2059631" />
+          <PerformanceCounterResult isOverallResultCounter="false" higherIsBetter="false" machineName="AGMO-PC" categoryName="Network Interface" counterName="Bytes Sent/sec" instanceName="d-link dwa-131 wireless n nano usb adapter[rev.e]" value="3153.42041" />
         </PerformanceCounterResults>
         <PageSummaries>
-          <PageSummary scenarioName="Login" testName="Login" url="Login{POST}" pageCount="625" responseTime="431" />
+          <PageSummary scenarioName="Scenario1" testName="Login" url="Login{POST}" pageCount="310" responseTime="1529" />
         </PageSummaries>
         <TestSummaries>
-          <TestSummary scenarioName="Login" testName="Login" totalTests="625" testsFailed="0" averageDuration="433" />
+          <TestSummary scenarioName="Scenario1" testName="Login" totalTests="310" testsFailed="0" averageDuration="1532" />
         </TestSummaries>
       </Summary>
     </LoadTestResult>
