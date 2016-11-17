@@ -1,6 +1,8 @@
-﻿using System;
+﻿using LoadTestResult.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,35 +13,47 @@ namespace LoadTestResult.Controllers
     {
         //
         // GET: /RunLoadTest/
-
-        public ActionResult Index()
+        public JsonResult GetLoadTestNames()
         {
-            return View();
+            string[] loadtestFiles = System.IO.Directory.GetFiles(Constants.LoadTest_Folder, "*.loadtest");
+            List<LoadTestNameModels> TestNameList = new List<LoadTestNameModels>();
+
+            foreach (var loadtestFile in loadtestFiles)
+            {
+                TestNameList.Add(new LoadTestNameModels(Path.GetFileNameWithoutExtension(loadtestFile), loadtestFile));
+            }
+
+            return Json(TestNameList, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult RunTest(string testPath = "D:\\project\\JxTest\\JxLoadTest\\JxLoadTest\\Sequential.loadtest")
+        [HttpPost]
+        public bool ExecuteLoadTest(string loadTestPath)
         {
-            if (!string.IsNullOrEmpty(testPath) && System.IO.File.Exists(testPath))
+            if (!string.IsNullOrEmpty(loadTestPath) && System.IO.File.Exists(loadTestPath))
             {
-                string file = DateTime.UtcNow.ToString("yyyyMMddHHmmss") + Constants.File_Extention;
+                string file = Path.GetFileNameWithoutExtension(loadTestPath) + "-" + DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm-ss") + Constants.File_Extention;
                 try
                 {
                     Process loadTestProcess = new Process();
-                    ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(Constants.MsTest_Url, "/testcontainer:" + testPath + " /resultsfile:" + Constants.LoadTest_Result_Folder + "\\" + file);
+                    ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(Constants.MsTest_Url, "/testcontainer:" + loadTestPath + " /resultsfile:" + Constants.LoadTest_Result_Folder + "\\" + file);
 
                     myProcessStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     loadTestProcess.StartInfo = myProcessStartInfo;
                     loadTestProcess.Start();
                     loadTestProcess.WaitForExit();
+
                 }
                 catch (Exception ex)
                 {
                     string message = ex.Message;
+                    return false;
                 }
+                return true;
             }
-            return View();
+            return false;
 
         }
+
 
     }
 }

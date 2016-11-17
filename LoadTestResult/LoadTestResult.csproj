@@ -333,6 +333,7 @@
     <Compile Include="Models\DetailedErrorModels.cs" />
     <Compile Include="Models\LoadListModels.cs" />
     <Compile Include="Models\LoadTestErrors.cs" />
+    <Compile Include="Models\LoadTestNameModels.cs" />
     <Compile Include="Models\LoadTestOverallGraphModels.cs" />
     <Compile Include="Models\LoadTestOverallResultsModels.cs" />
     <Compile Include="Models\LoadTestPageGraphModels.cs" />
@@ -457,6 +458,7 @@
     <Content Include="Content\css\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\img.png" />
+    <Content Include="Images\ring.gif" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -5,3 +5,4 @@ D:\project\LoadTestResult\RunLoadTest.LoadTest\obj\Debug\RunLoadTest.LoadTest.cs
 D:\project\LoadTestResult\RunLoadTest.LoadTest\obj\Debug\RunLoadTest.LoadTest.dll
 D:\project\LoadTestResult\RunLoadTest.LoadTest\obj\Debug\RunLoadTest.LoadTest.pdb
 D:\project\LoadTestResult\RunLoadTest.LoadTest\bin\Debug\Login.loadtest
+D:\project\LoadTestResult\RunLoadTest.LoadTest\bin\Debug\LoadTest1.loadtest
