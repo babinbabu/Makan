@@ -16,5 +16,6 @@ namespace LoadTestResult
         public static readonly string LoadTest_Result_Folder = string.Format("{0}{1}", Constants.Base_Folder_Url, Constants.LoadTest_Result_Folder_Name);
         public static readonly string File_Extention = ".trx";
         public static readonly double Malaysia_Time_Zone = 8;
+        public static readonly string Range = "1";
     }
 }

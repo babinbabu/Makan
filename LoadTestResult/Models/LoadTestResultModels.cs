@@ -49,8 +49,8 @@ namespace LoadTestResult.Models
             LoadTestRunId = entityLoadTestRun.LoadTestRunId;
             LoadTestName = entityLoadTestRun.LoadTestName;
             Description = entityLoadTestRun.Description;
-            StartTime = entityLoadTestRun.StartTime;
-            EndTime = entityLoadTestRun.EndTime;
+            StartTime = entityLoadTestRun.StartTime.Value.AddHours(Constants.Malaysia_Time_Zone);
+            EndTime = entityLoadTestRun.EndTime.Value.AddHours(Constants.Malaysia_Time_Zone);
             RunDuration = entityLoadTestRun.RunDuration;
             WarmupTime = entityLoadTestRun.WarmupTime;
             RunSettingUsed = entityLoadTestRun.RunSettingUsed;

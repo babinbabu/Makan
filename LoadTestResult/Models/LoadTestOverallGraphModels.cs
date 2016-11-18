@@ -11,7 +11,7 @@ namespace LoadTestResult.Models
         public string Instance { get; set; }
         public string Category { get; set; }
         public string Computer { get; set; }
-        public int Range { get; set; }
+        public string Range { get; set; }
         public double Minimum { get; set; }
         public double Maximum { get; set; }
         public double Average { get; set; }
@@ -21,8 +21,9 @@ namespace LoadTestResult.Models
 
         }
 
-        public LoadTestOverallGraphModels(string counter, string category, string computer, double minimum, double maximum, double average, string instance=null)
+        public LoadTestOverallGraphModels(string counter, string category, string computer, double minimum, double maximum, double average, string instance = null)
         {
+
             Counter = counter;
             Category = category;
             Computer = computer;
@@ -30,6 +31,7 @@ namespace LoadTestResult.Models
             Maximum = maximum;
             Average = average;
             Instance = instance;
+            Range = Constants.Range.PadRight((int)Math.Floor(Math.Log10(maximum) + 2), '0');
         }
 
     }
