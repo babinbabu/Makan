@@ -36,11 +36,11 @@ namespace LoadTestResult.Controllers
                 {
                     Process loadTestProcess = new Process();
                     ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(Constants.MsTest_Url, "/testcontainer:" + loadTestPath + " /resultsfile:" + Constants.LoadTest_Result_Folder + "\\" + file);
-
                     myProcessStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     loadTestProcess.StartInfo = myProcessStartInfo;
                     loadTestProcess.Start();
                     loadTestProcess.WaitForExit();
+                    
 
                 }
                 catch (Exception ex)
