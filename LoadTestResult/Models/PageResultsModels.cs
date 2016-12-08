@@ -12,7 +12,7 @@ namespace LoadTestResult.Models
         public string TestName { get; set; }
         public double AvgPageTime { get; set; }
         public int PageCount { get; set; }
-        public OverallThresholdRuleResult ThresholdRuleResult { get; set; }
+        public string ThresholdRuleResult { get; set; }
 
         public PageResultsModels()
         {
@@ -33,17 +33,17 @@ namespace LoadTestResult.Models
             bool overallThresholdRuleResultStatus = true;
             if (entityLoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == 2) && overallThresholdRuleResultStatus)
             {
-                ThresholdRuleResult = OverallThresholdRuleResult.critical;
+                ThresholdRuleResult = OverallThresholdRuleResult.critical.ToString();
                 overallThresholdRuleResultStatus = false;
             }
             else if (entityLoadTestPerformanceCounterInstances.Any(x => x.OverallThresholdRuleResult == 1) && overallThresholdRuleResultStatus)
             {
-                ThresholdRuleResult = OverallThresholdRuleResult.warnings;
+                ThresholdRuleResult = OverallThresholdRuleResult.warnings.ToString();
                 overallThresholdRuleResultStatus = false;
             }
             else
             {
-                ThresholdRuleResult = OverallThresholdRuleResult.ok;
+                ThresholdRuleResult = OverallThresholdRuleResult.ok.ToString();
             }
 
         }

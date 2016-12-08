@@ -73,6 +73,12 @@ namespace LoadTestResult.Models
     public class RegisterModel
     {
         [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 

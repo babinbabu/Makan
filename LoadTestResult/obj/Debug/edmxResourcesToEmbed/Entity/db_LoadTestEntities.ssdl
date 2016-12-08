@@ -600,6 +600,7 @@
     </Key>
     <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="WebLoadTestErrorDetail">
     <Key>

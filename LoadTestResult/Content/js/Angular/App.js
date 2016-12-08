@@ -6,8 +6,8 @@ app.config(['$routeProvider',
           controller: "RunLoadTest",
           activetab: 'runLoadTest'
       })
-     
-      
+
+
       $routeProvider.when("/LoadTestResult", {
           templateUrl: "/Template/LoadTest/LoadTestResult.html",
           controller: "LoadTestList",
@@ -36,7 +36,11 @@ app.config(['$routeProvider',
           templateUrl: '/Template/LoadTest/GraphRepesentation.html',
           controller: "GraphRepesentation"
       })
-      
+      .when('/LogErrorList', {
+            templateUrl: '/Template/LoadTest/ErrorLog.html',
+            controller: "LogErrorList",
+            activetab: 'logerrorlist'
+            })
       $routeProvider.when("/ChangePassword", {
           templateUrl: "/Template/LoadTest/ChangePassword.html",
           controller: 'ChangePassword'
@@ -92,11 +96,10 @@ app.constant('Constants', {
                 { Id: 0, FullName: 'Test Error' },
                 { Id: 1, FullName: 'Exception' },
                 { Id: 2, FullName: 'Http Error' },
-                { Id: 3, FullName: 'ValidationRule Error'},
+                { Id: 3, FullName: 'ValidationRule Error' },
                 { Id: 4, FullName: 'ExtractionRule Error' },
                 { Id: 5, FullName: 'Timeout' }
-    ]
-});
+    ]});
 
 app.filter("MessageTypeFilter", function (Constants, $filter) {
     return function (item) {
@@ -107,7 +110,7 @@ app.filter("MessageTypeFilter", function (Constants, $filter) {
     };
 });
 app.filter("ControllerFilter", function ($filter) {
-    
+
     return function (item) {
         if (item == true) {
             return "Local Run";
@@ -123,4 +126,17 @@ app.filter('capitalize', function ($filter) {
         }
     }
 });
+/**
+ * extends string prototype object to get a string with a number of characters from a string.
+ *
+ * @type {Function|*}
+ */
+String.prototype.trunc = String.prototype.trunc ||
+function (n) {
+
+    // this will return a substring and 
+    // if its larger than 'n' then truncate and append '...' to the string and return it.
+    // if its less than 'n' then return the 'string'
+    return this.length > n ? this.substr(0, n) + ' ...' : this.toString();
+};
 

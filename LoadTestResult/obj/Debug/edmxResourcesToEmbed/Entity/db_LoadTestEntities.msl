@@ -430,6 +430,7 @@
     <EntitySetMapping Name="UserProfiles">
       <EntityTypeMapping TypeName="LoadTest2010Model.UserProfile">
         <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
         </MappingFragment>

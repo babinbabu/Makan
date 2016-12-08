@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using LoadTestResult.Filters;
 using LoadTestResult.Models;
+using LoadTestResult.Services;
 
 namespace LoadTestResult.Controllers
 {
@@ -48,14 +49,14 @@ namespace LoadTestResult.Controllers
         public bool ChangePassword(LocalPasswordModel model)
         {
             bool changePasswordSucceeded;
-            changePasswordSucceeded= WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+            changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
             return changePasswordSucceeded;
         }
 
         //
         // POST: /Account/LogOff
 
-        
+
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
@@ -70,6 +71,41 @@ namespace LoadTestResult.Controllers
         public ActionResult Register()
         {
             return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult UserRegister()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserRegister(RegisterModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                if (!WebSecurity.UserExists(model.UserName))
+                {
+                    try
+                    {
+                        WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new { Name = model.Name });
+                        WebSecurity.Login(model.UserName, model.Password);
+                        return RedirectToLocal(returnUrl);
+                    }
+                    catch (MembershipCreateUserException e)
+                    {
+                        ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "User Name alredy exists");
+                    return View(model);
+                }
+            }
+            return View(model);
         }
 
         //
@@ -98,6 +134,7 @@ namespace LoadTestResult.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
 
         //
         // POST: /Account/Disassociate
@@ -313,6 +350,20 @@ namespace LoadTestResult.Controllers
             return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
         }
 
+        [AllowAnonymous]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public string ForgotPassword(LoginModel model)
+        {
+            return AccountService.ForgotPassword(model.UserName);
+        }
+
         [ChildActionOnly]
         public ActionResult RemoveExternalLogins()
         {
@@ -332,6 +383,19 @@ namespace LoadTestResult.Controllers
 
             ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        }
+
+        [ChildActionOnly]
+        public string GetUserName()
+        {
+            int userId = WebSecurity.GetUserId(User.Identity.Name);
+            using (Entity.db_LoadTest2010Entities db = new Entity.db_LoadTest2010Entities())
+            {
+                var entityUserProfile = db.UserProfiles.FirstOrDefault(x => x.UserId == userId);
+                return (entityUserProfile.Name.Length > 30) ? entityUserProfile.Name.Substring(0,30) + "..." : entityUserProfile.Name;
+            }
+            // retrieve a model, either by instantiating a class, querying a database, etc.
+
         }
 
         #region Helpers

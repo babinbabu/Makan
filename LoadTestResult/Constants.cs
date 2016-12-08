@@ -17,5 +17,9 @@ namespace LoadTestResult
         public static readonly string File_Extention = ".trx";
         public static readonly double Malaysia_Time_Zone = 8;
         public static readonly string Range = "1";
+        public static readonly string Protocol = System.Configuration.ConfigurationManager.AppSettings["Protocol"];
+        public static readonly string AccountName = System.Configuration.ConfigurationManager.AppSettings["AccountName"];
+        public static readonly string AccountKey = System.Configuration.ConfigurationManager.AppSettings["AccountKey"];
+
     }
 }

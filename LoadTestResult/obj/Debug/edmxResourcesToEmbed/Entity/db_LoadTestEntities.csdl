@@ -604,6 +604,7 @@
     <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="webpages_Roles" Relationship="LoadTest2010Model.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="WebLoadTestErrorDetail">
     <Key>

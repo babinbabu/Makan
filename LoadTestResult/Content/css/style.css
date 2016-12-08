@@ -38,3 +38,6 @@
    table .ok,.critical,.warnings {
         position: relative;
     }
+.forgot,.register {
+    color:white;
+}

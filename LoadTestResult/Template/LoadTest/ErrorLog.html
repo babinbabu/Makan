@@ -1,0 +1,163 @@
+﻿<style>
+    .container-table {
+        display: table;
+    }
+
+    .vertical-center-row {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .styled-select.slate {
+        background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+        height: 34px;
+        width: 240px;
+    }
+
+        .styled-select.slate select {
+            border: 1px solid #ccc;
+            font-size: 16px;
+            height: 34px;
+            width: 268px;
+        }
+
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .pagination {
+        margin-left: 36%;
+    }
+</style>
+<form ng-submit="submit()">
+    <div class="col-md-12 col-sm-12 col-xs-12" align="center">
+        Date:
+        <input type="text" ng-model="logdate" id="datepicker">&ensp; 
+        From Time:
+        <input type="text" ng-model="logfromtime" id="fromtime">&ensp; 
+        To Time:
+        <input type="text" ng-model="logtotime" id="totime">
+        &ensp;&ensp;&ensp;
+    <button type="submit" class="btn btn-primary" style="height: 5% !important;">submit</button>
+
+    </div>
+</form>
+
+<div class="clearfix"></div>
+<br />
+<br />
+<br />
+<div class="x_content test_result" style="display: none;">
+    <form>
+        <div class="table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">Identity </th>
+                        <th class="column-title">Thread Name </th>
+                        <th class="column-title">Logger Name </th>
+                        <th class="column-title">Level </th>
+                        <th class="column-title">Message</th>
+                        <th class="column-title">Domain </th>
+                        <th class="column-title">Details </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="even pointer" ng-repeat="LogError in LogErrorList.data">
+                        <td class=" ">{{LogError.Identity}}</td>
+                        <td class=" ">{{LogError.ThreadName}}</td>
+                        <td class=" ">{{LogError.LoggerName}}</td>
+                        <td class=" ">{{LogError.Level}}</td>
+                        <td class=" ">{{LogError.Message.trunc(15) }}</td>
+                        <td class=" ">{{LogError.Domain}}</td>
+                        <td class=" "><span class="glyphicon glyphicon-hand-up" data-toggle="modal" data-target="#myModal" ng-click="DetailedError(LogError)" style="cursor: pointer;"></span></td>
+                    </tr>
+                    <tr class="even pointer" ng-if="LogErrorList.data.length==0">
+                        <td colspan="7" style="text-align: center">No Errors to Show !</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <pagination total-items="pagingInfo.totalItems" ng-model="pagingInfo.page" max-size="maxSize" ng-click="selectPage(pagingInfo.page)" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" class="center" items-per-page="20"></pagination>
+        </div>
+    </form>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Detaied Error</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Identity :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].Identity}}</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>ThreadName :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].ThreadName}}</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>LoggerName :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].LoggerName}}</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Level :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].Level}}</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Message :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].Message}}</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Domain :</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label>{{DetailedLogError[0].Domain}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#datepicker").datepicker({
+            dateFormat: "dd-mm-yy"
+        });
+
+        $('#fromtime,#totime').timepicker({
+            timeFormat: 'H:mm',
+            interval: 30,
+            defaultTime: '00',
+            dynamic: true,
+            dropdown: true,
+            scrollbar: true
+        });
+    });
+</script>
